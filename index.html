@@ -44,12 +44,13 @@
     text-shadow: 0 0 10px #00d4ff;
   }
 
+  /* طبقة النجوم */
   #stars {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(circle at top left, #0b1e35, #000);
     z-index: -3;
     overflow: hidden;
+    background: radial-gradient(circle at top left, #0b1e35, #000);
   }
 
   #stars::before, #stars::after {
@@ -58,30 +59,45 @@
     top: 0; left: 0; right: 0; bottom: 0;
     background-repeat: repeat;
     pointer-events: none;
+    animation: gentleStars 10s ease-in-out infinite;
   }
 
   #stars::before {
-    background-image: radial-gradient(1.5px 1.5px at 20px 30px, white, transparent),
-                      radial-gradient(1px 1px at 100px 120px, #ccc, transparent),
-                      radial-gradient(1.5px 1.5px at 200px 80px, white, transparent),
-                      radial-gradient(1.2px 1.2px at 300px 150px, #eee, transparent);
+    background-image:
+      radial-gradient(1.5px 1.5px at 20px 30px, white, transparent),
+      radial-gradient(1px 1px at 100px 120px, #ccc, transparent),
+      radial-gradient(1.5px 1.5px at 200px 80px, white, transparent),
+      radial-gradient(1.2px 1.2px at 300px 150px, #eee, transparent);
     background-size: 500px 500px;
-    opacity: 0.6;
+    opacity: 0.7;
   }
 
   #stars::after {
-    background-image: radial-gradient(1px 1px at 50px 90px, #bbb, transparent),
-                      radial-gradient(0.8px 0.8px at 150px 40px, #eee, transparent),
-                      radial-gradient(1px 1px at 250px 130px, #ccc, transparent);
+    background-image:
+      radial-gradient(1px 1px at 50px 90px, #bbb, transparent),
+      radial-gradient(0.8px 0.8px at 150px 40px, #eee, transparent),
+      radial-gradient(1px 1px at 250px 130px, #ccc, transparent);
     background-size: 500px 500px;
-    opacity: 0.3;
+    opacity: 0.4;
   }
 
+  @keyframes gentleStars {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+    50% {
+      transform: translateY(-1px);
+      opacity: 1;
+    }
+  }
+
+  /* طبقة الخلفية اللونية */
   #layers {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     z-index: -2;
-    background: linear-gradient(to bottom, #0b1e35, #204060, #a0c4ff, #0d1b2a);
+    background: linear-gradient(to bottom, #00111a, #00334d, #007799, #001a33);
     background-size: 100% 300%;
     background-position: top;
     transition: background-position 0.3s ease;
@@ -104,6 +120,7 @@
   header h1 {
     font-size: 4rem;
     margin-bottom: 15px;
+    text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
   }
 
   header p {
@@ -119,6 +136,7 @@
     padding: 40px 20px;
     position: relative;
     z-index: 1;
+    background: rgba(0, 0, 0, 0.5); /* تخفيف تغطية الخلفية */
   }
 
   .container {
