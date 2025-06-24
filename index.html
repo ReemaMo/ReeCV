@@ -10,8 +10,8 @@
     margin: 0; padding: 0; box-sizing: border-box;
   }
 
-  body, html {
-    height: 300vh; /* لإتاحة التمرير */
+  html, body {
+    height: 300vh;
     font-family: 'Segoe UI', sans-serif;
     overflow-x: hidden;
   }
@@ -39,33 +39,55 @@
     text-shadow: 0 0 8px #00d4ff;
   }
 
-  /* الحاوية التي تحتوي الخلفيات */
   #background-container {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    pointer-events: none; /* لمنع تداخل الماوس */
+    pointer-events: none;
     z-index: -1;
-    background-color: black; /* أسود بالكامل */
-    background-image: url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png'), 
-                      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
-    background-repeat: repeat, no-repeat;
-    background-position: center top, center center;
-    background-size: auto, cover;
+    background-color: black;
+    background-image:
+      url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png');
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: auto;
     transition: background-color 1s ease;
   }
 
-  /* محتوى الصفحة */
+  /* صورة الجبال ستكون فوق النجوم مع تدرج شفافية */
+  #mountain-layer {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  /* تدرج أسود يغطي الجبال لتعتيم تدريجي */
+  #dark-gradient {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.8) 100%);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
+  }
+
   header {
     height: 100vh;
     display: flex; flex-direction: column; justify-content: center; align-items: center;
     color: white;
     text-align: center;
     padding: 0 20px;
+    text-shadow: 0 0 10px #00d4ff;
   }
 
   header h1 {
     font-size: 4rem;
-    text-shadow: 0 0 10px #00d4ff;
     margin-bottom: 15px;
   }
 
@@ -117,25 +139,10 @@
     font-size: 0.9rem;
   }
 
-  /* تأثير التدرج الديناميكي */
-  #background-container.gradient-bright {
-    background-image:
-      url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png'), 
-      linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)),
-      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
-    background-repeat: repeat, no-repeat, no-repeat;
-    background-position: center top, center center, center center;
-    background-size: auto, cover, cover;
-  }
-
-  #background-container.gradient-dark {
-    background-image:
-      url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png'),
-      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
-    background-repeat: repeat, no-repeat, no-repeat;
-    background-position: center top, center center, center center;
-    background-size: auto, cover, cover;
+  /* أيقونات nav عند hover تضيء */
+  nav a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 10px #00d4ff;
   }
 </style>
 </head>
@@ -148,6 +155,8 @@
 </nav>
 
 <div id="background-container"></div>
+<div id="mountain-layer"></div>
+<div id="dark-gradient"></div>
 
 <header>
   <h1>Reema</h1>
@@ -188,28 +197,35 @@
 </footer>
 
 <script>
-  const bgContainer = document.getElementById('background-container');
+  const mountain = document.getElementById('mountain-layer');
+  const darkGradient = document.getElementById('dark-gradient');
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
-    const viewportHeight = window.innerHeight;
+    const vh = window.innerHeight;
 
-    if(scrollY < viewportHeight * 0.8) {
-      // عند الجزء العلوي: نجوم فقط وخلفية سوداء صافية
-      bgContainer.style.backgroundColor = 'black';
-      bgContainer.classList.remove('gradient-bright', 'gradient-dark');
-    } else if(scrollY >= viewportHeight * 0.8 && scrollY < viewportHeight * 1.8) {
-      // عند التمرير للأسفل تدريجياً تظهر الإضاءة الخلفية للجبال
-      bgContainer.style.backgroundColor = 'transparent';
-      bgContainer.classList.add('gradient-bright');
-      bgContainer.classList.remove('gradient-dark');
+    // نسبة التمرير بين 0 و 1 عند التمرير من 0 إلى ارتفاع النافذة
+    let progress = Math.min(scrollY / vh, 1);
+
+    // نجعل ظهور صورة الجبال يبدأ تدريجياً من 20% تمرير حتى 80%
+    if (progress < 0.2) {
+      mountain.style.opacity = 0;
+    } else if (progress > 0.8) {
+      mountain.style.opacity = 1;
     } else {
-      // التمرير أكثر والصفحة تغمق تدريجياً من جديد
-      bgContainer.classList.remove('gradient-bright');
-      bgContainer.classList.add('gradient-dark');
+      mountain.style.opacity = (progress - 0.2) / (0.6);
+    }
+
+    // عكس ظهور التعتيم: يبدأ قوي (1) ثم يخف تدريجياً حتى 50% تمرير، بعدها يعود للتعتيم تدريجياً
+    if (progress < 0.5) {
+      darkGradient.style.opacity = 1 - (progress * 2);
+    } else {
+      // من 50% إلى 100% تمرير يزيد التعتيم تدريجياً إلى 0.8
+      darkGradient.style.opacity = 0.4 + ((progress - 0.5) * 0.8 * 2);
     }
   });
 </script>
 
 </body>
 </html>
+
