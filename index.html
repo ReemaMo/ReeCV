@@ -16,8 +16,10 @@
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
       overflow-x: hidden;
-      background: #0d1b2a;
       color: #f0f0f0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), /* تدرج أغمق للأسفل */
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
     }
 
     nav {
@@ -47,77 +49,6 @@
       text-shadow: 0 0 10px #00d4ff;
     }
 
-    /* طبقة النجوم */
-    #stars {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -3;
-      overflow: hidden;
-      background: transparent; /* جعل الخلفية شفافة لإظهار الصورة الطبيعية */
-    }
-
-    #stars::before, #stars::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-repeat: repeat;
-      pointer-events: none;
-      animation: gentleStars 10s ease-in-out infinite;
-    }
-
-    #stars::before {
-      background-image:
-        radial-gradient(1.5px 1.5px at 20px 30px, white, transparent),
-        radial-gradient(1px 1px at 100px 120px, #ccc, transparent),
-        radial-gradient(1.5px 1.5px at 200px 80px, white, transparent),
-        radial-gradient(1.2px 1.2px at 300px 150px, #eee, transparent),
-        radial-gradient(1px 1px at 50px 200px, #bbb, transparent),
-        radial-gradient(0.8px 0.8px at 150px 40px, #ddd, transparent);
-      background-size: 300px 300px;
-      opacity: 0.6; /* تقليل الشفافية لإظهار الصورة الطبيعية */
-    }
-
-    #stars::after {
-      background-image:
-        radial-gradient(1px 1px at 50px 90px, #bbb, transparent),
-        radial-gradient(0.8px 0.8px at 150px 40px, #eee, transparent),
-        radial-gradient(1px 1px at 250px 130px, #ccc, transparent),
-        radial-gradient(1.2px 1.2px at 350px 180px, #ddd, transparent);
-      background-size: 300px 300px;
-      opacity: 0.4;
-    }
-
-    @keyframes gentleStars {
-      0%, 100% {
-        transform: translateY(0);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(-1px);
-        opacity: 0.8;
-      }
-    }
-
-    /* طبقة الخلفية مع الصورة الطبيعية */
-    #layers {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: -4; /* جعلها أسفل النجوم */
-      background: linear-gradient(to bottom, rgba(0, 17, 26, 0.3), rgba(0, 51, 77, 0.3), rgba(0, 119, 153, 0.3), rgba(0, 26, 51, 0.3)), /* تدرج شفاف */
-                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-      transition: background-position 0.3s ease;
-    }
-
     header {
       height: 100vh;
       display: flex;
@@ -130,7 +61,7 @@
       text-shadow: 0 0 10px #00d4ff;
       position: relative;
       z-index: 1;
-      background: transparent;
+      background: transparent; /* إزالة الخلفية لإظهار الصورة الطبيعية */
     }
 
     header h1 {
@@ -152,12 +83,12 @@
       padding: 40px 20px;
       position: relative;
       z-index: 1;
-      background: rgba(0, 0, 0, 0.2); /* تقليل الشفافية لإظهار الخلفية */
+      background: rgba(0, 0, 0, 0.2); /* شفافية منخفضة لإظهار الخلفية */
     }
 
     .container {
       max-width: 800px;
-      background: rgba(0, 0, 0, 0.4); /* تقليل الشفافية */
+      background: rgba(0, 0, 0, 0.3); /* شفافية منخفضة */
       border-radius: 10px;
       padding: 30px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -193,11 +124,7 @@
 
     /* دعم الشاشات الصغيرة */
     @media (max-width: 600px) {
-      #stars::before, #stars::after {
-        background-size: 200px 200px;
-      }
-
-      #layers {
+      body {
         background-attachment: scroll; /* تحسين الأداء على الأجهزة المحمولة */
       }
 
@@ -221,9 +148,6 @@
     <a href="#experience">Experience / خبراتي</a>
     <a href="#contact">Contact / تواصل</a>
   </nav>
-
-  <div id="stars"></div>
-  <div id="layers"></div>
 
   <header>
     <h1>Reema</h1>
@@ -264,22 +188,9 @@
   </footer>
 
   <script>
-    const layers = document.getElementById('layers');
-
+    // إزالة تأثير التمرير لأن الخلفية ثابتة
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const height = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight,
-        document.body.clientHeight,
-        document.documentElement.clientHeight
-      ) - window.innerHeight;
-
-      const progress = height > 0 ? scrollY / height : 0;
-      const yPos = progress * 100;
-      layers.style.backgroundPosition = `center ${yPos}%`;
+      // يمكن إضافة تأثيرات أخرى إذا لزم الأمر
     });
   </script>
 </body>
