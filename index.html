@@ -1,238 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reema | Resume</title>
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reema | Resume</title>
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-      line-height: 1.6;
-      background: #000; /* Fallback background */
-      overflow-x: hidden;
-    }
+  body, html {
+    height: 300vh; /* لإتاحة التمرير */
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+  }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 10px 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-    }
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+  nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+  }
 
-    nav a:hover {
-      color: #00d4ff;
-      text-shadow: 0 0 8px #00d4ff;
-    }
+  nav a:hover {
+    color: #00d4ff;
+    text-shadow: 0 0 8px #00d4ff;
+  }
 
-    header {
-      position: relative;
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background-attachment: fixed;
-      padding: 0 20px;
-      overflow: hidden;
-    }
+  /* الحاوية التي تحتوي الخلفيات */
+  #background-container {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none; /* لمنع تداخل الماوس */
+    z-index: -1;
+    background-color: black; /* أسود بالكامل */
+    background-image: url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png'), 
+                      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+    background-repeat: repeat, no-repeat;
+    background-position: center top, center center;
+    background-size: auto, cover;
+    transition: background-color 1s ease;
+  }
 
-    /* حركة خفيفة للنجوم (تأثير وميض) */
-    @keyframes twinkle {
-      0%, 100% {opacity: 1;}
-      50% {opacity: 0.7;}
-    }
+  /* محتوى الصفحة */
+  header {
+    height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+  }
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: transparent url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png') repeat; /* صورة نجوم شفافة */
-      animation: twinkle 5s infinite alternate;
-      pointer-events: none;
-      z-index: 1;
-    }
+  header h1 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px #00d4ff;
+    margin-bottom: 15px;
+  }
 
-    header h1, header p {
-      position: relative;
-      z-index: 2;
-      color: white;
-      text-shadow: 0 0 10px #00d4ff;
-    }
+  header p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
 
-    header h1 {
-      font-size: 4rem;
-      margin-bottom: 15px;
-    }
+  section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    color: white;
+    text-align: center;
+  }
 
-    header p {
-      font-size: 1.5rem;
-      opacity: 0.9;
-    }
+  section .container {
+    max-width: 800px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    padding: 30px;
+  }
 
-    section {
-      min-height: 100vh;
-      padding: 80px 20px;
-      background: url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
-      background-attachment: fixed;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease, transform 1s ease;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      box-shadow: inset 0 0 100px rgba(0,0,0,0.6);
-    }
+  h2 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 6px #00d4ff;
+    font-size: 2.5rem;
+  }
 
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  ul {
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    list-style-type: disc;
+    padding-left: 40px;
+  }
 
-    .container {
-      max-width: 800px;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 30px;
-      border-radius: 10px;
-    }
+  footer {
+    padding: 40px 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ccc;
+  }
 
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      text-shadow: 0 0 6px #00d4ff;
-    }
+  .langs {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
 
-    ul {
-      list-style-type: disc;
-      padding-left: 40px;
-      text-align: left;
-      font-size: 1.2rem;
-      line-height: 1.8;
-    }
+  /* تأثير التدرج الديناميكي */
+  #background-container.gradient-bright {
+    background-image:
+      url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png'), 
+      linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-position: center top, center center, center center;
+    background-size: auto, cover, cover;
+  }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #ccc;
-    }
-
-    .langs {
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
-      header h1 {
-        font-size: 2.5rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  #background-container.gradient-dark {
+    background-image:
+      url('https://raw.githubusercontent.com/joshua1988/space/master/starfield.png'),
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+      url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+    background-repeat: repeat, no-repeat, no-repeat;
+    background-position: center top, center center, center center;
+    background-size: auto, cover, cover;
+  }
+</style>
 </head>
 <body>
 
-  <nav>
-    <a href="#about">About / من أنا</a>
-    <a href="#experience">Experience / خبراتي</a>
-    <a href="#contact">Contact / تواصل</a>
-  </nav>
+<nav>
+  <a href="#about">About / من أنا</a>
+  <a href="#experience">Experience / خبراتي</a>
+  <a href="#contact">Contact / تواصل</a>
+</nav>
 
-  <header>
-    <h1>Reema</h1>
-    <p>A passionate learner & creative thinker | متعلمة بشغف ومبدعة</p>
-  </header>
+<div id="background-container"></div>
 
-  <section id="about" class="fade-section">
-    <div class="container">
-      <h2>About Me / من أنا</h2>
-      <p>
-        أنا ريما، مطورة ويب ومهتمة بتقنيات البرمجة الحديثة. أحب التعلم المستمر ومشاركة المعرفة.
-        لدي خلفية في تطوير المواقع والتصميم الإبداعي.
-      </p>
-    </div>
-  </section>
+<header>
+  <h1>Reema</h1>
+  <p>A passionate learner & creative thinker | متعلمة بشغف ومبدعة</p>
+</header>
 
-  <section id="experience" class="fade-section">
-    <div class="container">
-      <h2>My Experience & Projects / خبراتي ومشاريعي</h2>
-      <ul>
-        <li>بناء مواقع ويب باستخدام HTML, CSS, JavaScript</li>
-        <li>مشاركة في مشاريع جامعية بتقنيات الذكاء الاصطناعي</li>
-        <li>تصميم واجهات مستخدم متجاوبة</li>
-        <li>إنشاء Chatbot باستخدام منصات مثل Chatbase</li>
-      </ul>
-    </div>
-  </section>
+<section id="about">
+  <div class="container">
+    <h2>About Me / من أنا</h2>
+    <p>أنا ريما، مطورة ويب ومهتمة بتقنيات البرمجة الحديثة. أحب التعلم المستمر ومشاركة المعرفة. لدي خلفية في تطوير المواقع والتصميم الإبداعي.</p>
+  </div>
+</section>
 
-  <section id="contact" class="fade-section">
-    <div class="container">
-      <h2>Contact Me / تواصل معي</h2>
-      <p>Email: reema@example.com</p>
-      <p>GitHub: github.com/reema</p>
-      <p>LinkedIn: linkedin.com/in/reema</p>
-    </div>
-  </section>
+<section id="experience">
+  <div class="container">
+    <h2>My Experience & Projects / خبراتي ومشاريعي</h2>
+    <ul>
+      <li>بناء مواقع ويب باستخدام HTML, CSS, JavaScript</li>
+      <li>مشاركة في مشاريع جامعية بتقنيات الذكاء الاصطناعي</li>
+      <li>تصميم واجهات مستخدم متجاوبة</li>
+      <li>إنشاء Chatbot باستخدام منصات مثل Chatbase</li>
+    </ul>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Reema. All rights reserved.</p>
-    <div class="langs">This page is available in English and Arabic.</div>
-  </footer>
+<section id="contact">
+  <div class="container">
+    <h2>Contact Me / تواصل معي</h2>
+    <p>Email: reema@example.com</p>
+    <p>GitHub: github.com/reema</p>
+    <p>LinkedIn: linkedin.com/in/reema</p>
+  </div>
+</section>
 
-  <script>
-    // لجعل القسم يظهر تدريجياً عند التمرير
-    function revealSections() {
-      const sections = document.querySelectorAll('.fade-section');
-      const triggerBottom = window.innerHeight * 0.85;
+<footer>
+  <p>&copy; 2025 Reema. All rights reserved.</p>
+  <div class="langs">This page is available in English and Arabic.</div>
+</footer>
 
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
+<script>
+  const bgContainer = document.getElementById('background-container');
 
-        if(sectionTop < triggerBottom) {
-          section.classList.add('visible');
-        } else {
-          section.classList.remove('visible');
-        }
-      });
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const viewportHeight = window.innerHeight;
+
+    if(scrollY < viewportHeight * 0.8) {
+      // عند الجزء العلوي: نجوم فقط وخلفية سوداء صافية
+      bgContainer.style.backgroundColor = 'black';
+      bgContainer.classList.remove('gradient-bright', 'gradient-dark');
+    } else if(scrollY >= viewportHeight * 0.8 && scrollY < viewportHeight * 1.8) {
+      // عند التمرير للأسفل تدريجياً تظهر الإضاءة الخلفية للجبال
+      bgContainer.style.backgroundColor = 'transparent';
+      bgContainer.classList.add('gradient-bright');
+      bgContainer.classList.remove('gradient-dark');
+    } else {
+      // التمرير أكثر والصفحة تغمق تدريجياً من جديد
+      bgContainer.classList.remove('gradient-bright');
+      bgContainer.classList.add('gradient-dark');
     }
-
-    window.addEventListener('scroll', revealSections);
-    window.addEventListener('load', revealSections);
-  </script>
+  });
+</script>
 
 </body>
 </html>
