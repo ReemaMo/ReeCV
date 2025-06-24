@@ -1,197 +1,94 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reema | Resume</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>صفحة مع خلفية طبيعة وشريط علوي بتأثير سماء ليلية</title>
   <style>
-    * {
+    /* خلفية الصفحة بالكامل */
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+      min-height: 100vh;
+      background: 
+        /* تدرج ظلال احترافي */
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.2) 0%, /* شفاف في الأعلى */
+          rgba(30, 58, 138, 0.5) 50%, /* أزرق داكن مع شفافية */
+          rgba(28, 37, 38, 0.8) 100% /* أسود داكن في الأسفل */
+        ),
+        /* صورة طبيعة عالية الجودة */
+        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80')no-repeat center center fixed;
+      background-size: cover; /* تحسين تغطية الصورة */
+      font-family: 'Noto Sans Arabic', sans-serif;
     }
 
-    html, body {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-      overflow-x: hidden;
-      color: #f0f0f0;
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.7)), /* تدرج أغمق للأسفل */
-                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
-      background-size: cover;
-    }
-
-    nav {
+    /* الشريط العلوي */
+    .top-bar {
+      height: 100px; /* سمك الشريط */
+      background: 
+        /* تدرج لوني للسماء الليلية */
+        linear-gradient(180deg, #1C2526, #2C3E50),
+        /* تأثير نجوم */
+        radial-gradient(circle, #FFFFFF 1px, transparent 1px),
+        radial-gradient(circle, #FFFACD 1px, transparent 1px);
+      background-size: auto, 50px 50px, 40px 40px;
+      background-position: 0 0, 0 0, 25px 25px;
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 10px 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* ظل خفيف */
       z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px); /* دعم Safari */
     }
 
-    nav a {
-      color: #f0f0f0;
-      font-weight: bold;
+    /* تأثير وميض للنجوم في الشريط */
+    .top-bar::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      opacity: 0.5;
+      animation: twinkle 4s infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.4; }
+      100% { opacity: 0.7; }
+    }
+
+    /* النصوص في الشريط */
+    .top-bar nav a {
+      color: #F5F5F5; /* أبيض هادئ */
+      font-size: 18px;
+      margin: 0 20px;
       text-decoration: none;
-      transition: color 0.3s, text-shadow 0.3s;
+      text-shadow: 0 0 2px #1C2526; /* حدود خفيفة */
+      transition: color 0.3s ease, transform 0.2s ease;
     }
 
-    nav a:hover {
-      color: #00d4ff;
-      text-shadow: 0 0 10px #00d4ff;
-    }
-
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 0 20px;
-      text-shadow: 0 0 10px #00d4ff;
-      position: relative;
-      z-index: 1;
-      background: transparent; /* إزالة الخلفية لإظهار الصورة الطبيعية */
-    }
-
-    header h1 {
-      font-size: 4rem;
-      margin-bottom: 15px;
-      text-shadow: 0 0 20px #00d4ff, 0 0 40px #00d4ff;
-    }
-
-    header p {
-      font-size: 1.5rem;
-      opacity: 0.9;
-    }
-
-    section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-      position: relative;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.2); /* شفافية منخفضة لإظهار الخلفية */
-    }
-
-    .container {
-      max-width: 800px;
-      background: rgba(0, 0, 0, 0.3); /* شفافية منخفضة */
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      text-shadow: 0 0 6px #00d4ff;
-      font-size: 2.5rem;
-    }
-
-    ul {
-      text-align: left;
-      font-size: 1.2rem;
-      line-height: 1.8;
-      list-style-type: disc;
-      padding-left: 40px;
-    }
-
-    footer {
-      padding: 40px 20px;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.7);
-      color: #ccc;
-      position: relative;
-      z-index: 1;
-    }
-
-    .langs {
-      margin-top: 20px;
-      font-size: 0.9rem;
-    }
-
-    /* دعم الشاشات الصغيرة */
-    @media (max-width: 600px) {
-      body {
-        background-attachment: scroll; /* تحسين الأداء على الأجهزة المحمولة */
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      header p {
-        font-size: 1.2rem;
-      }
-
-      .container {
-        padding: 20px;
-      }
+    .top-bar nav a:hover {
+      color: #4DB6AC; /* أخضر مائي هادئ */
+      transform: scale(1.1); /* تكبير خفيف */
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="#about">About / من أنا</a>
-    <a href="#experience">Experience / خبراتي</a>
-    <a href="#contact">Contact / تواصل</a>
-  </nav>
-
-  <header>
-    <h1>Reema</h1>
-    <p>A passionate learner & creative thinker | متعلمة بشغف ومبدعة</p>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Me / من أنا</h2>
-      <p>أنا ريما، مطورة ويب ومهتمة بتقنيات البرمجة الحديثة. أحب التعلم المستمر ومشاركة المعرفة. لدي خلفية في تطوير المواقع والتصميم الإبداعي.</p>
-    </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <h2>My Experience & Projects / خبراتي ومشاريعي</h2>
-      <ul>
-        <li>بناء مواقع ويب باستخدام HTML, CSS, JavaScript</li>
-        <li>مشاركة في مشاريع جامعية بتقنيات الذكاء الاصطناعي</li>
-        <li>تصميم واجهات مستخدم متجاوبة</li>
-        <li>إنشاء Chatbot باستخدام منصات مثل Chatbase</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact Me / تواصل معي</h2>
-      <p>Email: reema@example.com</p>
-      <p>GitHub: github.com/reema</p>
-      <p>LinkedIn: linkedin.com/in/reema</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Reema. All rights reserved.</p>
-    <div class="langs">This page is available in English and Arabic.</div>
-  </footer>
-
-  <script>
-    // إزالة تأثير التمرير لأن الخلفية ثابتة
-    window.addEventListener('scroll', () => {
-      // يمكن إضافة تأثيرات أخرى إذا لزم الأمر
-    });
-  </script>
+  <div class="top-bar">
+    <nav>
+      <a href="#">الرئيسية</a>
+      <a href="#">حول</a>
+      <a href="#">اتصل</a>
+    </nav>
+  </div>
+  <!-- محتوى الصفحة (للتوضيح) -->
+  <div style="height: 1000px; padding: 120px 20px; color: #F5F5F5; text-align: center;">
+    <h1>مرحبًا بك في صفحتنا</h1>
+    <p>هذا مثال لصفحة مع خلفية طبيعة وشريط علوي بتأثير سماء ليلية.</p>
+  </div>
 </body>
 </html>
