@@ -10,6 +10,58 @@
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
+      .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.project-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+.project-content {
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-card h3 {
+  font-size: 1.3em;
+  color: white;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.project-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(5, 15, 30, 0.9);
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding: 20px;
+  overflow-y: auto;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.project-card:hover .project-details {
+  opacity: 1;
+}
     }
 
   body {
@@ -210,25 +262,51 @@ nav {
 
   <section id="about">
     <div class="container">
-      <h2>About Me / من أنا</h2>
+      <h2>About Me</h2>
       <p>
-        أنا ريما، مطورة ويب ومهتمة بتقنيات البرمجة الحديثة. أحب التعلم المستمر ومشاركة المعرفة.
-        لدي خلفية في تطوير المواقع والتصميم الإبداعي.
+      I’m an undergraduate student in Computer Science, focusing on developing my skills in web design and development. I have gained practical experience through academic projects and am currently working on my graduation project, which involves building a web application. I’m passionate about turning ideas into interactive digital experiences and believe that hands-on learning is key to professional growth.
       </p>
     </div>
   </section>
 
   <section id="experience">
-    <div class="container">
-      <h2>My Experience & Projects / خبراتي ومشاريعي</h2>
-      <ul>
-        <li>بناء مواقع ويب باستخدام HTML, CSS, JavaScript</li>
-        <li>مشاركة في مشاريع جامعية بتقنيات الذكاء الاصطناعي</li>
-        <li>تصميم واجهات مستخدم متجاوبة</li>
-        <li>إنشاء Chatbot باستخدام منصات مثل Chatbase</li>
-      </ul>
+  <div class="container">
+    <h2>My Projects</h2>
+
+    <div class="projects-grid">
+
+      <!-- مشروع الشبكات -->
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Network Design for College of Arts & Science</h3>
+          <div class="project-details">
+            <p><strong>Date:</strong> Nov 2024</p>
+            <p><strong>Technologies:</strong> Cisco Packet Tracer</p>
+            <p><strong>Languages:</strong> Python, Java, C++</p>
+            <p>Designed a network to connect the Department of Computer Science with the IT Department and the Dean's Office.</p>
+            <p>Configured routers and switches for efficient data flow.</p>
+            <p>Implemented security measures to protect sensitive information.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- مشروع المطعم -->
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Smart Restaurant Menu Application</h3>
+          <div class="project-details">
+            <p><strong>Date:</strong> Nov 2022</p>
+            <p><strong>Technologies:</strong> C#, Windows Forms, .NET Framework</p>
+            <p>Designed an interactive menu app for item selection and total price calculation.</p>
+            <p>Integrated data grid with input validation and error handling.</p>
+            <p>Developed features to clear and reset orders.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="contact">
     <div class="container">
