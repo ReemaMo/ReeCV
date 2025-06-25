@@ -16,9 +16,17 @@
   font-family: 'Segoe UI', sans-serif;
   color: white;
   line-height: 1.6;
-  background: 
-  linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 100%),
-  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+background: linear-gradient(
+  to bottom,
+  rgba(0, 0, 0, 0.25) 0%,     /* تعتيم واضح من الأعلى */
+  rgba(0, 0, 0, 0.25) 10%,    /* يثبت شوي التعتيم */
+  rgba(0, 0, 0, 0.2) 30%,     /* يبدأ يخف تدريجيًا */
+  rgba(0, 0, 0, 0.15) 50%,
+  rgba(0, 0, 0, 0.2) 70%,
+  rgba(0, 0, 0, 0.3) 85%,     /* يبدأ يشتد في الأسفل */
+  rgba(0, 0, 0, 0.4) 100%     /* نهاية داكنة أكثر */
+),
+url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
