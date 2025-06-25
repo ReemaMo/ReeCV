@@ -1,94 +1,162 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحة مع خلفية طبيعة وشريط علوي بتأثير سماء ليلية</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reema | Resume</title>
   <style>
-    /* خلفية الصفحة بالكامل */
-    body {
+    * {
       margin: 0;
       padding: 0;
-      min-height: 100vh;
-      background: 
-        /* تدرج ظلال احترافي */
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.2) 0%, /* شفاف في الأعلى */
-          rgba(30, 58, 138, 0.5) 50%, /* أزرق داكن مع شفافية */
-          rgba(28, 37, 38, 0.8) 100% /* أسود داكن في الأسفل */
-        ),
-        /* صورة طبيعة عالية الجودة */
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80')no-repeat center center fixed;
-      background-size: cover; /* تحسين تغطية الصورة */
-      font-family: 'Noto Sans Arabic', sans-serif;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    /* الشريط العلوي */
-    .top-bar {
-      height: 100px; /* سمك الشريط */
-      background: 
-        /* تدرج لوني للسماء الليلية */
-        linear-gradient(180deg, #1C2526, #2C3E50),
-        /* تأثير نجوم */
-        radial-gradient(circle, #FFFFFF 1px, transparent 1px),
-        radial-gradient(circle, #FFFACD 1px, transparent 1px);
-      background-size: auto, 50px 50px, 40px 40px;
-      background-position: 0 0, 0 0, 25px 25px;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, rgba(15, 32, 39, 0.6), rgba(32, 58, 67, 0.85), rgba(44, 83, 100, 0.95), #0a0a0a);
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-attachment: fixed;
+      transition: background 0.5s ease-in-out;
+    }
+
+    nav {
       position: fixed;
       top: 0;
       width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* ظل خفيف */
+      padding: 12px 0;
       z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background-image: url('https://images.unsplash.com/photo-1608409737505-8c72a6f83a25?auto=format&fit=crop&w=1500&q=80'); /* سماء ليلية */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.6);
     }
 
-    /* تأثير وميض للنجوم في الشريط */
-    .top-bar::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: inherit;
-      opacity: 0.5;
-      animation: twinkle 4s infinite alternate;
-    }
-
-    @keyframes twinkle {
-      0% { opacity: 0.4; }
-      100% { opacity: 0.7; }
-    }
-
-    /* النصوص في الشريط */
-    .top-bar nav a {
-      color: #F5F5F5; /* أبيض هادئ */
-      font-size: 18px;
-      margin: 0 20px;
+    nav a {
+      color: white;
       text-decoration: none;
-      text-shadow: 0 0 2px #1C2526; /* حدود خفيفة */
-      transition: color 0.3s ease, transform 0.2s ease;
+      font-weight: bold;
+      transition: 0.3s;
     }
 
-    .top-bar nav a:hover {
-      color: #4DB6AC; /* أخضر مائي هادئ */
-      transform: scale(1.1); /* تكبير خفيف */
+    nav a:hover {
+      color: #00d4ff;
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 50px;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 80px 20px;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    .langs {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <nav>
-      <a href="#">الرئيسية</a>
-      <a href="#">حول</a>
-      <a href="#">اتصل</a>
-    </nav>
-  </div>
-  <!-- محتوى الصفحة (للتوضيح) -->
-  <div style="height: 1000px; padding: 120px 20px; color: #F5F5F5; text-align: center;">
-    <h1>مرحبًا بك في صفحتنا</h1>
-    <p>هذا مثال لصفحة مع خلفية طبيعة وشريط علوي بتأثير سماء ليلية.</p>
-  </div>
+
+  <nav>
+    <a href="#about">About / من أنا</a>
+    <a href="#experience">Experience / خبراتي</a>
+    <a href="#contact">Contact / التواصل</a>
+  </nav>
+
+  <header>
+    <h1>Reema</h1>
+    <p>A passionate learner & creative thinker | متعلمة بشغف ومبدعة</p>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me / من أنا</h2>
+      <p>
+        أنا ريما، مطورة ويب ومهتمة بتقنيات البرمجة الحديثة. أحب التعلم المستمر ومشاركة المعرفة.
+        لدي خلفية في تطوير المواقع والتصميم الإبداعي.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>My Experience & Projects / خبراتي ومشاريعي</h2>
+      <ul>
+        <li>بناء مواقع ويب باستخدام HTML, CSS, JavaScript</li>
+        <li>مشاركة في مشاريع جامعية بتقنيات الذكاء الاصطناعي</li>
+        <li>تصميم واجهات مستخدم متجاوبة</li>
+        <li>إنشاء Chatbot باستخدام منصات مثل Chatbase</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me / تواصل معي</h2>
+      <p>Email: reema@example.com</p>
+      <p>GitHub: github.com/reema</p>
+      <p>LinkedIn: linkedin.com/in/reema</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Reema. All rights reserved.</p>
+    <div class="langs">This page is available in English and Arabic.</div>
+  </footer>
+
 </body>
 </html>
+
