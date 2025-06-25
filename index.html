@@ -40,6 +40,18 @@
       position: relative;
     }
 
+    nav::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(5, 5, 25, 0.85), rgba(5, 5, 25, 0));
+  pointer-events: none;
+  z-index: 0;
+}
+
     nav .star {
       position: absolute;
       width: 2px;
