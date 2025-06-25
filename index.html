@@ -17,9 +17,11 @@
   color: white;
   line-height: 1.6;
   background: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 40%, rgba(0, 0, 0, 0.2) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%),
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   transition: background 0.5s ease-in-out;
 }
@@ -36,8 +38,8 @@ nav {
   justify-content: center;
   align-items: center;
   gap: 30px;
-  background-color: rgba(5, 5, 25, 0.4);
-  backdrop-filter: blur(6px);
+  background-color: rgba(10, 10, 30, 0.7);
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: none ;
@@ -117,7 +119,7 @@ nav {
     }
 
     header {
-      margin-top: 70px;
+      margin-top: 0;
       text-align: center;
       padding: 100px 20px 50px;
       background: rgba(0, 0, 0, 0.5);
