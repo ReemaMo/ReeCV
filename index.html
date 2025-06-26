@@ -186,7 +186,7 @@
 }
 
 .project-card:hover {
-  transform: scale(1.06);
+  transform: scale(1.3);
   backdrop-filter: blur(12px); /* بلورة أقوى عند التمرير */
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
@@ -221,17 +221,15 @@
   opacity: 0;
   padding: 30px;
   overflow-y: auto;
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
   transform: scale(0.8); 
   transform-origin: top;
-  z-index: 2;
+  z-index: 20;
   flex: 1 1 auto;
 }
 
 .project-card:hover .project-details {
   opacity: 1;
-  transform: scale(1.6); /* تكبير النافذة المنبثقة */
-  box-shadow: 0 0 40px rgba(0, 200, 255, 0.5);
   cursor: default;
 }
 
