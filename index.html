@@ -4,12 +4,60 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reema | Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
+
+      .custom-header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 10%;
+  background: transparent;
+  color: white;
+}
+
+.custom-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 5em;
+  margin-bottom: 30px;
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.intro-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
       
       #skills {
   padding: 80px 20px;
@@ -324,11 +372,11 @@ nav {
     <a href="#contact">Contact / التواصل</a>
   </nav>
 
- <header>
-  <h1 class="fade-slide">Reema</h1>
-  <div class="scroll-down" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
-    ⬇️
-  </div>
+ <header class="custom-header">
+  <h1 class="custom-name">Reema Alkhalifa</h1>
+  <button class="intro-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+    Get to know me
+  </button>
 </header>
 
 <style>
