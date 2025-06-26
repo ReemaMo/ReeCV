@@ -65,23 +65,26 @@
       .custom-header {
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 120px 10% 0 10%;
-  background: transparent;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
   color: white;
+}
+      
+  .left-block, .right-block {
+  flex: 1;
 }
 
 .custom-name {
   font-family: 'Great Vibes', cursive;
   font-size: 6em;
   margin-bottom: 30px;
+  margin-top: 80px;
   animation: fadeSlideIn 1.2s ease-out forwards;
   opacity: 0;
   transform: translateY(20px);
 }
-
+ 
 .intro-button {
   padding: 15px 30px;
   font-size: 1.2em;
@@ -95,7 +98,37 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s ease-out 4s forwards;
 }
+
+  .right-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  .typewriter-container {
+  font-family: 'Share Tech Mono', monospace;
+  color: #00f5ff;
+  font-size: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(255,255,255,0.7);
+  width: 0;
+  animation: typing 3.5s steps(30, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 320px }
+}
+
+@keyframes blink {
+  0% { border-color: rgba(255,255,255,0.7); }
+  50% { border-color: transparent; }
+  100% { border-color: rgba(255,255,255,0.7); }
 
 .intro-button:hover {
   background: rgba(255, 255, 255, 0.2);
