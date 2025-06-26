@@ -18,7 +18,7 @@
   font-family: 'Share Tech Mono', monospace;
   color: white;
   font-size: 2.5em;
-  line-height: 1.1; /* يقلل المسافة بين السطرين */
+  line-height: 1.1;
   display: inline-block;
 }
 
@@ -30,25 +30,22 @@
   animation-fill-mode: forwards;
 }
 
+/* سطر 1 */
 .line1 {
-  animation: typing1 1.2s steps(17) forwards;
-  animation-delay: 1.2s; /* ينتظر حتى يظهر الاسم */
+  animation: typing 1.2s steps(17) forwards;
+  animation-delay: 1.2s;
 }
 
+/* سطر 2 */
 .line2 {
-  animation: typing2 1.2s steps(12) forwards;
+  animation: typing 1.2s steps(11) forwards;
   animation-delay: 2.5s;
 }
 
-/* عدد الحروف حسب ما يظهر تمامًا (بما فيهم الفراغات والنقاط) */
-@keyframes typing1 {
+/* استخدام نفس الأنميشن للسطرين */
+@keyframes typing {
   from { width: 0 }
-  to { width: 17ch } /* Web Developer in */
-}
-
-@keyframes typing2 {
-  from { width: 0 }
-  to { width: 12ch } /* Progress... */
+  to { width: 17ch; } /* نفس العرض لكلا السطرين */
 }
 
      
@@ -463,7 +460,7 @@ nav {
   </div>
   <div class="right-block">
     <div class="typewriter-container">
-      <span class="line line1">Web Developer</span><br>
+  <span class="line line1">Web Developer</span>
   <span class="line line2">in Progress...</span>
     </div>
   </div>
