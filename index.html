@@ -48,41 +48,7 @@
   to { width: 17ch; } /* نفس العرض لكلا السطرين */
 }
 
-    /* القسم container */
-.about-section {
-  padding: 100px 20px;
-  backdrop-filter: blur(8px); /* تأثير بلوري على الخلفية */
-  background: rgba(255, 255, 255, 0.05);
-  transition: background 0.3s ease;
-  border-radius: 12px;
-  margin: 40px auto;
-  max-width: 900px;
-}
-
-/* المحتوى */
-.about-content h2 {
-  font-size: 3em;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #00cfff;
-}
-
-.about-content p {
-  font-size: 1.4em;
-  line-height: 1.8;
-  color: #eee;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-/* تأثير hover على الفقرة */
-.about-content p:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 200, 255, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-}
-
+ 
 
      
 @keyframes slideIn {
@@ -548,17 +514,57 @@ nav {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(10px); }
   }
+
+  .about-section {
+  padding: 120px 30px;
+  margin: 60px auto;
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+  transition: all 0.4s ease;
+}
+
+.about-content h2 {
+  font-size: 3.5em;
+  text-align: center;
+  color: #00d4ff;
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 1.6em;
+  color: #eee;
+  line-height: 1.9;
+  text-align: center;
+  transition: all 0.4s ease;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+/* تأثير عند المرور */
+.about-content p:hover {
+  transform: scale(1.04);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
 </style>
 
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
+<section id="about" class="about-section">
+  <div class="about-content">
+    <h2>About Me</h2>
+    <p>
       I’m an undergraduate student in Computer Science, focusing on developing my skills in web design and development. I have gained practical experience through academic projects and am currently working on my graduation project, which involves building a web application. I’m passionate about turning ideas into interactive digital experiences and believe that hands-on learning is key to professional growth.
-      </p>
-    </div>
-  </section>
+    </p>
+  </div>
+</section>
+
 
   <section id="experience">
   <div class="container">
