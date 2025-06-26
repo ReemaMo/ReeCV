@@ -179,10 +179,11 @@
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   backdrop-filter: blur(4px); /* مبدئي */
+   min-height: 300px;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
   backdrop-filter: blur(12px); /* بلورة أقوى عند التمرير */
   background: rgba(255, 255, 255, 0.15);
   box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
@@ -211,9 +212,10 @@
   backdrop-filter: blur(16px);
   color: #fff;
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 100%;
   opacity: 0;
-  padding: 20px;
+  padding: 30px;
   overflow-y: auto;
   transition: opacity 0.4s ease-in-out;
   z-index: 2;
@@ -458,8 +460,8 @@ nav {
 
 #experience {
   max-width: 1000px;
-  margin: auto;
-  padding: 100px 20px;
+  margin: 100px auto;
+  padding: 140px 30px;
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.03);
   border-radius: 15px;
@@ -774,7 +776,7 @@ nav {
 
   window.addEventListener('scroll', () => {
     const rect = expSection.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
+    if (rect.top < window.innerHeight - 80) {
       expSection.classList.add('visible');
     }
   });
