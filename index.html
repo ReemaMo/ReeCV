@@ -161,22 +161,6 @@
   height: 20px;
 }
 
-.progress {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(
-    270deg,
-    #00d4ff,
-    #00bfff,
-    #00aaff,
-    #0099ff,
-    #0088ff
-  );
-  background-size: 400% 400%;
-  animation: gradientMove 2.5s ease infinite;
-  border-radius: 25px;
-  transition: width 2s ease-in-out;
-}
 
 
       .projects-grid {
@@ -442,16 +426,26 @@ nav {
   transform: translateY(0);
 }
 
-    @keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(270deg, #00d4ff, #00bfff, #00aaff);
+  background-size: 400% 400%;
+  animation: gradientMove 2.5s ease infinite;
+  border-radius: 25px;
+  transition: width 2s ease-in-out;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* لمعان عند اكتمال الشريط */
+.progress.glow {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  transition: box-shadow 0.8s ease-in-out;
 }
 
   </style>
@@ -712,12 +706,16 @@ nav {
   const skillBars = document.querySelectorAll('.progress');
 
   function animateSkillBars() {
-    skillBars.forEach(bar => {
+    skillBars.forEach((bar, index) => {
       const value = bar.getAttribute('data-skill');
-      bar.style.width = '0'; // إعادة الضبط
+      bar.style.width = '0';
+      bar.classList.remove('glow');
       setTimeout(() => {
         bar.style.width = value;
-      }, 200); // تأخير خفيف لجاذبية التأثير
+        bar.addEventListener('transitionend', () => {
+          bar.classList.add('glow');
+        }, { once: true });
+      }, index * 200 + 200);
     });
   }
 
@@ -727,11 +725,11 @@ nav {
         animateSkillBars();
       }
     });
-  }, { threshold: 0.4 });
+  }, { threshold: 0.5 });
 
-  const skillsSection = document.querySelector('#skills');
-  observer.observe(skillsSection);
+  observer.observe(document.querySelector('#skills'));
 </script>
+
 
 <script>
   window.addEventListener('scroll', () => {
