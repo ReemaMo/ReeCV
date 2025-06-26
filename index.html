@@ -174,12 +174,14 @@
   position: relative;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   backdrop-filter: blur(4px); /* مبدئي */
-   min-height: 300px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -195,6 +197,7 @@
   padding: 20px;
   position: relative;
   z-index: 1;
+  flex: 0 0 auto;
 }
 
 .project-card h3 {
@@ -219,6 +222,7 @@
   overflow-y: auto;
   transition: opacity 0.4s ease-in-out;
   z-index: 2;
+  flex: 1 1 auto;
 }
 
 .project-card:hover .project-details {
