@@ -212,8 +212,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: rgba(5, 15, 30, 0.85);
-  backdrop-filter: blur(16px);
+  background: rgba(5, 15, 30, 0.95);
+  backdrop-filter: blur(20px);
   color: #fff;
   width: 100%;
   height: 100%;
@@ -222,7 +222,7 @@
   padding: 30px;
   overflow-y: auto;
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  transform: scaleY(0); /* يبدأ مخفي */
+  transform: scale(0.8); 
   transform-origin: top;
   z-index: 2;
   flex: 1 1 auto;
@@ -230,7 +230,9 @@
 
 .project-card:hover .project-details {
   opacity: 1;
-  transform: scaleY(1);
+  transform: scale(1.6); /* تكبير النافذة المنبثقة */
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.5);
+  cursor: default;
 }
 
   
