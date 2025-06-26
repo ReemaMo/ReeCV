@@ -22,6 +22,7 @@
   white-space: nowrap;
   overflow: hidden;
   display: block;
+  width: max-content; 
 }
     
 
@@ -38,11 +39,12 @@
 
 .line1 {
   animation: typing1 1.2s steps(13, end) forwards;
+   animation-delay: 1.3s; 
 }
 
 .line2 {
   animation: typing2 1.2s steps(12, end) forwards;
-  animation-delay: 1.3s;
+  animation-delay: 2.6s;
 }
 
 @keyframes typing1 {
@@ -61,6 +63,9 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+    @keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 
