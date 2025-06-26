@@ -175,7 +175,7 @@
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  overflow: hidden;
+  overflow: visible;
   transition: all 0.4s ease-in-out;
   cursor: pointer;
   backdrop-filter: blur(4px); /* مبدئي */
@@ -209,14 +209,14 @@
 }
 
 .project-details {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: rgba(5, 15, 30, 0.95);
   backdrop-filter: blur(20px);
   color: #fff;
-  width: 100%;
-  height: 100%;
+  width: 70vw;
+  height: 60vh;
   max-height: none;
   opacity: 0;
   padding: 30px;
@@ -231,6 +231,8 @@
 .project-card:hover .project-details {
   opacity: 1;
   cursor: default;
+  pointer-events: auto;
+  z-index: 1000; 
 }
 
   
