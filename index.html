@@ -30,33 +30,31 @@
   display: block;
   overflow: hidden;
   white-space: nowrap;
-  margin-bottom: 0.1em;
-  width: 0;
+  margin-bottom: 0.05em; 
+  width: max-content;
+  transform-origin: left;
   animation-fill-mode: forwards;
 }
 
-
-
 .line1 {
   animation: typing1 1.2s steps(13, end) forwards;
-   animation-delay: 1.3s; 
 }
 
 .line2 {
   animation: typing2 1.2s steps(12, end) forwards;
-  animation-delay: 2.6s;
+  animation-delay: 1.3s;
 }
 
 @keyframes typing1 {
-  from { width: 0 }
-  to { width: 13ch }
+  from { transform: scaleX(0) }
+  to { transform: scaleX(1) }
 }
-
 
 @keyframes typing2 {
-  from { width: 0 }
-  to { width: 15ch }
+  from { transform: scaleX(0) }
+  to { transform: scaleX(1) }
 }
+
      
 @keyframes slideIn {
   to {
