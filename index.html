@@ -19,48 +19,48 @@
   color: white;
   font-size: 2.5em;
   line-height: 1.4;
-  white-space: normal;
+  white-space: nowrap;
   overflow: hidden;
-  display: inline-block;
+  display: block;
 }
     
+
 .line {
   display: block;
   overflow: hidden;
-  border-right: none;
   white-space: nowrap;
+  margin-bottom: 0.3em;
+  width: 0;
+  animation-fill-mode: forwards;
 }
+
 
 
 .line1 {
-  width: 0;
-  animation: typing1 2s steps(18, end) forwards;
+  animation: typing1 1.2s steps(13, end) forwards;
 }
 
 .line2 {
-  width: 0;
-  animation: typing2 2s steps(10, end) forwards;
-  animation-delay: 2.2s;
-  animation-fill-mode: forwards;
-  display: inline-block;
+  animation: typing2 1.2s steps(12, end) forwards;
+  animation-delay: 1.3s;
 }
 
+@keyframes typing1 {
+  from { width: 0 }
+  to { width: 13ch }
+}
+
+
+@keyframes typing2 {
+  from { width: 0 }
+  to { width: 12ch }
+}
      
 @keyframes slideIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-    @keyframes typing1 {
-  from { width: 0 }
-  to { width: 200px }
-}
-
-@keyframes typing2 {
-  from { width: 0 }
-  to { width: 150px }
 }
 
 
@@ -463,8 +463,8 @@ nav {
     </button>
   </div>
   <div class="right-block">
-    <div class="typewriter-container"><span class="line line1">Web Developer in</span><br>
-  <span class="line line2">Progress...</span></div>
+    <div class="typewriter-container"><span class="line line1">Web Developer</span><br>
+  <span class="line line2">in Progress...</span></div>
   </div>
 </header>
 
