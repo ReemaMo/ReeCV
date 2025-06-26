@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reema | Resume</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -12,20 +13,69 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
 
+      .typewriter-container {
+  font-family: 'Share Tech Mono', monospace;
+  color: #00f5ff;
+  font-size: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(255,255,255,0.7);
+  width: 0;
+  animation: typing 3.5s steps(30, end) forwards, blink 0.7s infinite;
+  align-self: center;
+}
+
+      .intro-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideIn 1s ease-out 4s forwards; /* يبدأ بعد 4 ثواني من التحميل */
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 320px }
+}
+
+@keyframes blink {
+  0% { border-color: rgba(255,255,255,0.7); }
+  50% { border-color: transparent; }
+  100% { border-color: rgba(255,255,255,0.7); }
+}
+
       .custom-header {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding-left: 10%;
+  padding-left: 120px 10% 0 10%;
   background: transparent;
   color: white;
 }
 
 .custom-name {
   font-family: 'Great Vibes', cursive;
-  font-size: 5em;
+  font-size: 6em;
   margin-bottom: 30px;
   animation: fadeSlideIn 1.2s ease-out forwards;
   opacity: 0;
@@ -373,10 +423,15 @@ nav {
   </nav>
 
  <header class="custom-header">
-  <h1 class="custom-name">Reema Alkhalifa</h1>
-  <button class="intro-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
-    Get to know me
-  </button>
+  <div class="left-block">
+    <h1 class="custom-name">Reema Alkhalifa</h1>
+    <button class="intro-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+      Get to know me
+    </button>
+  </div>
+  <div class="right-block">
+    <div class="typewriter-container">Web Developer in Progress...</div>
+  </div>
 </header>
 
 <style>
