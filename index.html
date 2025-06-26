@@ -264,6 +264,39 @@ nav {
         padding: 12px 0 20px;
       }
     }
+
+    
+.vision-section {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, rgba(5, 15, 30, 0.8), rgba(10, 20, 40, 0.9));
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-title {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #00cfff;
+}
+
+.vision-text {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.3em;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-in-out;
+}
+
+/* Animation on scroll */
+.vision-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 <body>
@@ -290,6 +323,15 @@ nav {
     <h1>Reema</h1>
     <p>A passionate learner & creative thinker | متعلمة بشغف ومبدعة</p>
   </header>
+
+  <section class="vision-section">
+  <div class="vision-container">
+    <h2 class="vision-title">My Vision / رؤيتي</h2>
+    <p class="vision-text">
+      I aspire to become a creative and professional web developer, contributing to building meaningful and user-friendly digital experiences that inspire and serve communities.
+    </p>
+  </div>
+</section>
 
   <section id="about">
     <div class="container">
@@ -342,7 +384,7 @@ nav {
   
    <section id="skills">
   <div class="container">
-    <h2>Skills / المهارات</h2>
+    <h2>Skills</h2>
     
     <div class="skill">
       <p>Python</p>
@@ -439,7 +481,17 @@ nav {
     }
   });
 </script>
+<script>
+  window.addEventListener('scroll', () => {
+    const text = document.querySelector('.vision-text');
+    const sectionTop = text.getBoundingClientRect().top;
+    const screenHeight = window.innerHeight;
 
+    if (sectionTop < screenHeight - 100) {
+      text.classList.add('visible');
+    }
+  });
+</script>
 
 </body>
 </html>
