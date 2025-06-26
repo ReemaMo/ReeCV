@@ -19,16 +19,18 @@
   color: white;
   font-size: 2.5em;
   line-height: 1.4;
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   display: inline-block;
 }
-    .line {
-  display: inline-block;
+    
+.line {
+  display: block;
   overflow: hidden;
   border-right: none;
   white-space: nowrap;
 }
+
 
 .line1 {
   width: 0;
@@ -59,6 +61,7 @@
 @keyframes typing2 {
   from { width: 0 }
   to { width: 150px }
+}
 
 
 @keyframes blink {
