@@ -200,6 +200,23 @@
   width: 100%;
   height: 200px;
 }
+    .project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  z-index: 5;
+  border-radius: 10px;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
 
 .project-card:hover {
   transform: scale(1.1);
@@ -238,7 +255,7 @@
   padding: 20px;
   overflow-y: auto;
   transition: opacity 0.4s ease-in-out;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -38%);
   transform-origin: top;
   z-index: 999;
   flex: 1 1 auto;
@@ -643,13 +660,13 @@ nav {
 
   <section id="experience">
   <div class="container">
-    <h2 class="projects-title">Projects</h2>
-    <h2>My Projects</h2>
+    <h2 class="projects-title">My Projects</h2>
 
     <div class="projects-grid">
 
       <!-- مشروع الشبكات -->
       <div class="project-card">
+        <div class="project-overlay"></div>
         <div class="project-content">
           <h3>Network Design for College of Arts & Science</h3>
           <div class="project-details">
