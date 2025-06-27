@@ -116,11 +116,7 @@
   align-items: center;
 }
 
-  
-@keyframes typing {
-  from { width: 0 }
-  to { width: 320px }
-}
+
 
 @keyframes blink {
   0% { border-color: rgba(255,255,255,0.7); }
@@ -678,7 +674,9 @@ nav a:active {
 
 @media (max-width: 600px) {
   .menu-toggle {
-    display: block;
+    
+   margin-left: auto;
+    margin-right: 15px;
   }
 
   nav {
@@ -691,6 +689,7 @@ nav a:active {
     position: fixed;
   }
     .nav-links {
+    
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -732,14 +731,35 @@ nav a:active {
 }
     @media (max-width: 600px) {
   .left-block {
-    order: 2;
+    
   }
 
   .right-block {
-    order: 1;
     margin-bottom: 20px;
   }
 }
+    @media (max-width: 600px) {
+  .about-section {
+    padding: 40px 10px;
+    margin: 20px auto;
+    max-width: 95%;
+  }
+
+  .about-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+
+  .about-content p {
+    font-size: 1em;
+    line-height: 1.4;
+    padding: 15px;
+  }
+}
+
+
+
+
   </style>
 </head>
   
@@ -836,8 +856,8 @@ nav a:active {
   padding: 100px 30px;
   margin: 80px auto;
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.06); /* تقليل الشفافية */
-  backdrop-filter: blur(20px);  /* تغبيش أوضح */
+  background: rgba(255, 255, 255, 0.06); 
+  backdrop-filter: blur(20px);  
   -webkit-backdrop-filter: blur(20px);
   border-radius: 18px;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.07);
@@ -1189,5 +1209,12 @@ nav a:active {
   });
 </script>
   
+  <script>
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+  document.querySelector(".overlay").classList.toggle("active");
+}
+</script>
+
 </body>
 </html>
