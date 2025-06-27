@@ -309,6 +309,16 @@ url('https://www.everwallpaper.co.uk/cdn/shop/collections/misty-forest-living-ro
     backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
+    .overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 999; /* أقل من .nav-links */
+  display: none;
+}
+.overlay.active {
+  display: block;
+}
    
 nav {
   position: sticky;
@@ -318,7 +328,7 @@ nav {
   padding: 12px 0;
   z-index: 1000;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 30px;
   background-color: rgba(0, 0, 0, 0.6);
@@ -326,6 +336,7 @@ nav {
   -webkit-backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  flex-wrap: wrap;
 }
 
     nav.scrolled {
@@ -534,14 +545,8 @@ nav {
   transition: box-shadow 0.8s ease-in-out;
 }
 
-       @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-        height: auto;
-        padding: 12px 0 20px;
-      }
-    }
+
+
 
 #experience {
   max-width: 1000px;
@@ -650,25 +655,28 @@ nav {
   }
 }
 
-    .menu-toggle {
-  display: none;
+.menu-toggle {
   font-size: 2em;
   background: none;
   color: white;
   border: none;
   cursor: pointer;
-  position: absolute;
-  top: 18px;
-  right: 20px;
-  z-index: 1001;
+  display: none; /* يكون ظاهر فقط بالجوال */
 }
 
 @media (max-width: 600px) {
   .menu-toggle {
     display: block;
-    margin-right: 15px;
   }
 
+  nav {
+    height: 70px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -678,7 +686,7 @@ nav {
     top: 70px;
     right: 0;
     width:100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 20px 0;
     border-radius: 10px;
     margin-top: 10px;
@@ -711,7 +719,11 @@ nav {
 }
   </style>
 </head>
+  
 <body>
+
+
+  <div class="overlay"></div>
 
   <nav>
     <!-- 30 نجمة -->
@@ -1144,6 +1156,22 @@ nav {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
     });
+  });
+</script>
+
+  <script>
+  const navLinks = document.getElementById('navLinks');
+  const overlay = document.querySelector('.overlay');
+  const menuToggle = document.querySelector('.menu-toggle');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+
+  overlay.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    overlay.classList.remove('active');
   });
 </script>
   
