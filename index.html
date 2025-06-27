@@ -452,14 +452,6 @@ nav {
       color: #ccc;
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-        height: auto;
-        padding: 12px 0 20px;
-      }
-    }
 
     
 .vision-section {
@@ -542,6 +534,15 @@ nav {
   transition: box-shadow 0.8s ease-in-out;
 }
 
+       @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+        padding: 12px 0 20px;
+      }
+    }
+
 #experience {
   max-width: 1000px;
   margin: 100px auto;
@@ -597,6 +598,37 @@ nav {
   .intro-button {
     font-size: 0.9em;
     padding: 8px 14px;
+  }
+}
+    @media (max-width: 600px) {
+  .custom-header {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  .left-block, .right-block {
+    width: 100%;
+  }
+
+  .custom-name {
+    font-size: 3.2em;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .typewriter-container {
+    font-size: 1.5em;
+  }
+}
+    @media (max-width: 600px) {
+  .vision-text {
+    font-size: 1.3em;
+    padding: 20px;
+  }
+
+  .skill p {
+    font-size: 1em;
   }
 }
 
