@@ -514,6 +514,38 @@ nav {
   transform: translateY(0);
 }
 
+    @media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  .project-card {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .project-details {
+    width: 95vw;
+    max-height: 80vh;
+    font-size: 0.9em;
+    padding: 15px;
+  }
+
+  .skill-bar {
+    height: 14px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .intro-button {
+    font-size: 0.9em;
+    padding: 8px 14px;
+  }
+}
 
   </style>
 </head>
@@ -534,6 +566,8 @@ nav {
 
     <a href="#about">About Me</a>
     <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#vision">Vision</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -584,15 +618,6 @@ nav {
     }
   }
 
-  /* السهم المتحرك */
-  .scroll-down {
-    font-size: 3em;
-    color: white;
-    margin-top: 20px;
-    cursor: pointer;
-    animation: bounce 2s infinite;
-    user-select: none;
-  }
 
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
@@ -733,7 +758,7 @@ nav {
      </div>
 </section>
 
-  <section class="vision-section">
+  <section id="vision" class="vision-section">
   <div class="vision-container">
     <h2 class="vision-title">My Vision</h2>
     <p class="vision-text">
