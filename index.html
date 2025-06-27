@@ -688,23 +688,22 @@ nav a:active {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    position: fixed;
   }
-  .nav-links {
+    .nav-links {
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width:95%;
-    background-color: rgba(0, 0, 0, 0.9);
+    left: 0; /* <== حلي المشكلة */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
     padding: 20px 0;
-    border-radius: 10px;
-    margin-top: 10px;
-    z-index:  1000;
+    border-radius: 0 0 10px 10px;
+    margin-top: 0;
+    z-index: 1000;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   }
 
@@ -720,16 +719,25 @@ nav a:active {
 }
 }
 
-    @media (max-width: 600px) {
+ @media (max-width: 600px) {
   .about {
-    padding: 20px;
-    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
   }
 
   .about p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    text-align: left;
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+    @media (max-width: 600px) {
+  .left-block {
+    order: 2;
+  }
+
+  .right-block {
+    order: 1;
+    margin-bottom: 20px;
   }
 }
   </style>
