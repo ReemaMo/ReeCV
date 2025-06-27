@@ -57,9 +57,9 @@
     transform: translateY(0);
   }
 }
-    @keyframes fadeIn {
+    /*@keyframes fadeIn {
   to { opacity: 1; }
-}
+}*/
 
 
 @keyframes blink {
@@ -117,12 +117,6 @@
 }
 
 
-
-@keyframes blink {
-  0% { border-color: rgba(255,255,255,0.7); }
-  50% { border-color: transparent; }
-  100% { border-color: rgba(255,255,255,0.7); } 
-}
 
 .intro-button:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -674,7 +668,7 @@ nav a:active {
 
 @media (max-width: 600px) {
   .menu-toggle {
-    
+    display: block;
    margin-left: auto;
     margin-right: 15px;
   }
@@ -687,6 +681,9 @@ nav a:active {
     align-items: center;
     flex-wrap: wrap;
     position: fixed;
+    top: 0;
+      left: 0;
+    right: 0;
   }
     .nav-links {
     
@@ -1189,10 +1186,10 @@ nav a:active {
   const overlay = document.querySelector('.overlay');
   const menuToggle = document.querySelector('.menu-toggle');
 
-  function toggleMenu() {
+  /*function toggleMenu() {
     navLinks.classList.toggle('active');
     overlay.classList.toggle('active');
-  }
+  }*/
 
   // إغلاق القائمة عند الضغط على أي رابط
   document.querySelectorAll('.nav-links a').forEach(link => {
