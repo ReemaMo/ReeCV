@@ -407,6 +407,22 @@ nav {
       color: #00d4ff;
     }
 
+    /*  تأثير الإشعاع الأبيض عند النقر */
+nav a:active {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+    .nav-links {
+  display: flex;
+  justify-content: center; /* وسط أفقي */
+  align-items: center;     /* وسط عمودي */
+  gap: 30px;               /* مسافة بين الروابط */
+  flex: 1;
+}
+    
     header {
       margin-top: 0;
       text-align: center;
@@ -719,7 +735,6 @@ nav {
 <body>
 
 
-  <div class="overlay"></div>
 
   <nav>
     <!-- 30 نجمة -->
@@ -747,6 +762,9 @@ nav {
     <a href="#contact">Contact</a>
       </div>
   </nav>
+
+  
+  <div class="overlay"></div>
 
  <header class="custom-header">
   <div class="left-block">
