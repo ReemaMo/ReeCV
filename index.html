@@ -657,6 +657,10 @@ nav {
   color: white;
   border: none;
   cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  z-index: 1001;
 }
 
 @media (max-width: 600px) {
@@ -668,14 +672,41 @@ nav {
   .nav-links {
     display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width:100%;
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
+    padding: 20px 0;
     border-radius: 10px;
     margin-top: 10px;
+    z-index:  1000;
   }
 
-  .nav-links.active {
-    display: flex;
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  padding: 10px 0;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: center;
+}
+}
+
+    @media (max-width: 600px) {
+  .about {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .about p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
   }
 }
   </style>
@@ -1099,6 +1130,21 @@ nav {
     const nav = document.getElementById('navLinks');
     nav.classList.toggle('active');
   }
+</script>
+
+  <script>
+  const navLinks = document.querySelector('.nav-links');
+
+  function toggleMenu() {
+    navLinks.classList.toggle('active');
+  }
+
+  // يخفي القائمة بعد الضغط على أي رابط
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
 </script>
   
 </body>
