@@ -738,6 +738,10 @@ nav a:active {
 
 
   <nav>
+    
+      <!-- زر القائمة للجوال -->
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
     <!-- 30 نجمة -->
     <span class="star"></span><span class="star"></span><span class="star"></span>
     <span class="star"></span><span class="star"></span><span class="star"></span>
@@ -751,8 +755,7 @@ nav a:active {
     <span class="star"></span><span class="star"></span><span class="star"></span>
 
     
-  <!-- زر القائمة للجوال -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     
   <!-- روابط القائمة -->
     <div class="nav-links" id="navLinks">
@@ -763,7 +766,6 @@ nav a:active {
     <a href="#contact">Contact</a>
       </div>
   </nav>
-
   
   <div class="overlay"></div>
 
@@ -1152,30 +1154,8 @@ nav a:active {
   }
 </script>
 
-  <script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('active');
-  }
-</script>
-
-  <script>
+<script>
   const navLinks = document.querySelector('.nav-links');
-
-  function toggleMenu() {
-    navLinks.classList.toggle('active');
-  }
-
-  // يخفي القائمة بعد الضغط على أي رابط
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-    });
-  });
-</script>
-
-  <script>
-  const navLinks = document.getElementById('navLinks');
   const overlay = document.querySelector('.overlay');
   const menuToggle = document.querySelector('.menu-toggle');
 
@@ -1184,6 +1164,15 @@ nav a:active {
     overlay.classList.toggle('active');
   }
 
+  // إغلاق القائمة عند الضغط على أي رابط
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  });
+
+  // إغلاق القائمة عند الضغط على الخلفية الداكنة
   overlay.addEventListener('click', () => {
     navLinks.classList.remove('active');
     overlay.classList.remove('active');
