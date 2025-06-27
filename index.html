@@ -14,12 +14,28 @@
       scroll-behavior: smooth;
     }
 
-.typewriter-container {
+    .typewriter-container {
+  font-size: 2em;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid white;
+  animation: blinkCursor 0.8s step-end infinite;
+  text-align: left;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+/*.typewriter-container {
   font-family: 'Share Tech Mono', monospace;
   color: white;
   font-size: 2.5em;
   line-height: 1.1;
-  display: inline-block;
+  display: inline-block;*/
 }
 
 .line {
@@ -31,16 +47,16 @@
 }
 
 /* سطر 1 */
-.line1 {
+/*.line1 {
   animation: typing 1.2s steps(17) forwards;
   animation-delay: 1.2s;
 }
 
-/* سطر 2 */
+/* 
 .line2 {
   animation: typing 1.2s steps(11) forwards;
   animation-delay: 2.5s;
-}
+} */
 
 /* استخدام نفس الأنميشن للسطرين */
 @keyframes typing {
@@ -476,7 +492,7 @@ nav a:active {
   padding: 100px 30px;
   margin: 80px auto;
   max-width: 900px;
-  background: rgba(255, 255, 255, 0.03); /* ✅ شفافية أعلى */
+  background: rgba(255, 255, 255, 0.03); 
   backdrop-filter: blur(12px);           /* تغبيش خفيف */
   -webkit-backdrop-filter: blur(12px);
   border-radius: 18px;
@@ -620,13 +636,13 @@ nav a:active {
 
   .custom-name {
     font-size: 3.2em;
-    margin-top: 0;
+    margin-top: 6;
     margin-left: 0;
   }
 
-  .typewriter-container {
+  /*.typewriter-container {
     font-size: 1.5em;
-  }
+  }*/
 }
     @media (max-width: 600px) {
   .vision-text {
@@ -803,12 +819,17 @@ nav a:active {
       Get to know me
     </button>
   </div>
-  <div class="right-block">
+<!-- <div class="right-block">
     <div class="typewriter-container">
   <span class="line line1">Web Developer</span>
   <span class="line line2">in Progress...</span>
     </div>
+  </div> 
+   <div class="right-block">
+  <div class="typewriter-container">
+    <span id="typewriter-text"></span>
   </div>
+</div> -->
 </header>
 
 <style>
@@ -1211,6 +1232,35 @@ function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
   document.querySelector(".overlay").classList.toggle("active");
 }
+</script>
+
+      <script>
+  const phrases = ["Web Developer", "UI/UX Enthusiast", "Creative Coder"];
+  const el = document.getElementById("typewriter-text");
+  let i = 0, j = 0, isDeleting = false;
+
+  function type() {
+    const currentPhrase = phrases[i];
+    if (!isDeleting) {
+      el.textContent = currentPhrase.substring(0, j + 1);
+      j++;
+      if (j === currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(type, 1200);
+        return;
+      }
+    } else {
+      el.textContent = currentPhrase.substring(0, j - 1);
+      j--;
+      if (j === 0) {
+        isDeleting = false;
+        i = (i + 1) % phrases.length;
+      }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+
+  type();
 </script>
 
 </body>
