@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reema's CV </title>
+  <link rel="icon" type="image/png" href="logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
@@ -14,58 +15,6 @@
       scroll-behavior: smooth;
     }
 
- /*.typewriter-container {
-  font-size: 2em;
-  color: white;
-  font-weight: bold;
-  height: 50px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid white;
-  animation: blinkCursor 0.8s step-end infinite;
-  text-align: left;
-}
-
-@keyframes blinkCursor {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: white; }
-}
-/*.typewriter-container {
-  font-family: 'Share Tech Mono', monospace;
-  color: white;
-  font-size: 2.5em;
-  line-height: 1.1;
-  display: inline-block;
-} 
-
-.line {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  animation-fill-mode: forwards;
-}
-
-/* سطر 1 */
-/*.line1 {
-  animation: typing 1.2s steps(17) forwards;
-  animation-delay: 1.2s;
-}
-
-/* 
-.line2 {
-  animation: typing 1.2s steps(11) forwards;
-  animation-delay: 2.5s;
-} */
-
-/* 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 17ch; } /*  
-} */
-
- 
-
      
 @keyframes slideIn {
   to {
@@ -73,10 +22,6 @@
     transform: translateY(0);
   }
 }
-    /*@keyframes fadeIn {
-  to { opacity: 1; }
-}*/
-
 
 @keyframes blink {
   0% { border-color: rgba(255,255,255,0.7); }
@@ -449,10 +394,6 @@ nav a:active {
     }
 
 
-   /* section {
-      padding: 80px 20px;
-      background: rgba(0, 0, 0, 0.6);
-    } */
     section {
      padding: 80px 20px;
       background: transparent;
@@ -480,13 +421,6 @@ nav a:active {
       background: rgba(0, 0, 0, 0.8);
     }
 
-    /*.langs {
-      margin-top: 20px;
-      text-align: center;
-      font-size: 0.9em;
-      color: #ccc;
-    }*/
-
 
     
 .vision-section {
@@ -494,7 +428,7 @@ nav a:active {
   margin: 80px auto;
   max-width: 900px;
   background: rgba(255, 255, 255, 0.03); 
-  backdrop-filter: blur(12px);           /* تغبيش خفيف */
+  backdrop-filter: blur(12px);           
   -webkit-backdrop-filter: blur(12px);
   border-radius: 18px;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.06);
@@ -647,9 +581,6 @@ nav a:active {
     margin-left: 0;
   }
 
-  /*.typewriter-container {
-    font-size: 1.5em;
-  }*/
 }
     @media (max-width: 600px) {
   .vision-text {
@@ -828,17 +759,6 @@ nav a:active {
       Get to know me
     </button>
   </div> </header>
-<!-- <div class="right-block">
-    <div class="typewriter-container">
-  <span class="line line1">Web Developer</span>
-  <span class="line line2">in Progress...</span>
-    </div>
-  </div> 
-   <div class="right-block">
-  <div class="typewriter-container">
-    <span id="typewriter-text"></span>
-  </div>
-</div> --> 
 
 
 <style>
@@ -1216,10 +1136,7 @@ nav a:active {
   const overlay = document.querySelector('.overlay');
   const menuToggle = document.querySelector('.menu-toggle');
 
-  /*function toggleMenu() {
-    navLinks.classList.toggle('active');
-    overlay.classList.toggle('active');
-  }*/
+
 
   // إغلاق القائمة عند الضغط على أي رابط
   document.querySelectorAll('.nav-links a').forEach(link => {
@@ -1242,35 +1159,6 @@ function toggleMenu() {
   document.querySelector(".overlay").classList.toggle("active");
 }
 </script>
-
-      <!-- <script>
-  const phrases = ["Web Developer", "UI/UX Enthusiast", "Creative Coder"];
-  const el = document.getElementById("typewriter-text");
-  let i = 0, j = 0, isDeleting = false;
-
-  function type() {
-    const currentPhrase = phrases[i];
-    if (!isDeleting) {
-      el.textContent = currentPhrase.substring(0, j + 1);
-      j++;
-      if (j === currentPhrase.length) {
-        isDeleting = true;
-        setTimeout(type, 1200);
-        return;
-      }
-    } else {
-      el.textContent = currentPhrase.substring(0, j - 1);
-      j--;
-      if (j === 0) {
-        isDeleting = false;
-        i = (i + 1) % phrases.length;
-      }
-    }
-    setTimeout(type, isDeleting ? 50 : 100);
-  }
-
-  type();
-</script> -->
 
 </body>
 </html>
