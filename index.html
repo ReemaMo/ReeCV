@@ -691,6 +691,7 @@
   }
 
   nav {
+    flex-wrap: wrap;  
     height: 70px;
     padding: 0 20px;
     display: flex;
@@ -807,15 +808,34 @@
                 margin-bottom: 20px;
                }
 
-        #toggle-theme {
-            margin-left: 0;       
-  margin-right: auto;   
+      #toggle-theme {
+  order: 3;
+  width: 100%;
+  text-align: right;
+  margin-top: 10px;
+  margin-left: auto;    /* يحرك الزر يمين */
+  margin-right: 0;      
   background: none;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
 }
+
+
+/*         #toggle-theme {
+          order: 3;
+          width: 100%;
+          text-align: right;
+          margin-top: 10px;
+ margin-left: 0;       
+  margin-right: auto;   
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+} */
 
 /*     margin-top: 15px;
     margin-bottom: 10px;
