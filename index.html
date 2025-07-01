@@ -277,7 +277,7 @@
                   color: white;
                   border: none;
                   cursor: pointer;
-                  display: none; /* يكون ظاهر فقط بالجوال */
+                  display: none; /*  ظاهر فقط بالجوال */
                 }
 
 
@@ -309,15 +309,15 @@
 
 
 
-  /* تأثير الدخول fade + slide */
-  .fade-slide {
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-    animation-name: fadeSlideIn;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-  }
+        /* تأثير الدخول fade + slide */
+        .fade-slide {
+                    opacity: 0;
+                    transform: translateY(20px);
+                    animation-fill-mode: forwards;
+                    animation-name: fadeSlideIn;
+                    animation-duration: 1s;
+                    animation-timing-function: ease-out;
+                   }
 
 /* ---------------------------------------------
     8.   قسم نبذة عني (About Section)
@@ -491,7 +491,7 @@
                                             }     
       
 /* ---------------------------------------------
-   10.   قسم المهارات (Skills Section)
+   10.    قسم المهارات (Skills Section)
 ---------------------------------------------- */  
     
     
@@ -873,13 +873,7 @@ body.dark-mode::before {
       <!-- زر القائمة للجوال -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     
-  <!-- زر تغيير المظهر -->
-    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
-  <img id="theme-icon" 
-       src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
-       alt="Moon Icon" 
-       width="32" height="32" />
-</button> 
+
     
     <!-- 30 نجمة -->
     <span class="star"></span><span class="star"></span><span class="star"></span>
@@ -904,7 +898,13 @@ body.dark-mode::before {
     <a href="#vision">Vision</a>
     <a href="#contact">Contact</a>
       </div>
-
+      <!-- زر تغيير المظهر -->
+    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
+  <img id="theme-icon" 
+       src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
+       alt="Moon Icon" 
+       width="32" height="32" />
+</button> 
 
   </nav>
   
