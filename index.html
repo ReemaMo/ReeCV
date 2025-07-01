@@ -947,8 +947,25 @@
         
 
 
+  #toggle-theme {
+    position: fixed;
+    bottom: 20px;      /* من الأسفل */
+    right: 20px;       /* من اليمين */
+    width: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 3001;     /* فوق كل شيء */
+  }
 
-       #toggle-theme {
+  #toggle-theme img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) hue-rotate(180deg);
+  }
+/*        #toggle-theme {
                       order: 3;
                       width: 100%;
                       text-align: right;
@@ -968,7 +985,7 @@
                         width: 28px;
                         height: 28px;
                         filter: brightness(0) saturate(100%) invert(100%) sepia(100%) hue-rotate(180deg);
-                        }
+                        } */
                                }
     
   </style>
