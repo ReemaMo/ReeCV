@@ -944,8 +944,21 @@
       .right-block {
                     margin-bottom: 20px;
                    }
-        
-#toggle-theme {
+
+        #toggle-theme {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* أعلى من overlay */
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* #toggle-theme {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -955,7 +968,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-}
+} */
 
 
 /*   #toggle-theme {
