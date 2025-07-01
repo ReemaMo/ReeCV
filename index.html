@@ -761,6 +761,28 @@
          }
 
 
+            #toggle-theme {
+          
+           display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999; /* أعلى من overlay */
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+
+  #toggle-theme img {
+    width: 32px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) hue-rotate(180deg);
+  }
 
     
 /* ---------------------------------------------
@@ -945,18 +967,6 @@
                     margin-bottom: 20px;
                    }
 
-        #toggle-theme {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999; /* أعلى من overlay */
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 /* #toggle-theme {
   position: fixed;
@@ -984,11 +994,6 @@
     z-index: 3001;     
   } */
 
-  #toggle-theme img {
-    width: 32px;
-    height: 32px;
-    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) hue-rotate(180deg);
-  }
 /*        #toggle-theme {
                       order: 3;
                       width: 100%;
@@ -1021,6 +1026,14 @@
   
 <body>
 
+                  <!-- زر تغيير المظهر -->
+    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
+        <img id="theme-icon" 
+             src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
+             alt="Moon Icon" 
+             width="32" height="32" />
+    </button> 
+
   <nav>
       <!-- زر القائمة للجوال -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -1049,13 +1062,7 @@
     
   </nav>
 
-                <!-- زر تغيير المظهر -->
-    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
-        <img id="theme-icon" 
-             src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
-             alt="Moon Icon" 
-             width="32" height="32" />
-    </button> 
+
   
   <div class="overlay"></div>
 
