@@ -795,9 +795,20 @@
         
 
        /* ==== شريط التنقل و القائمة ==== */
+
         .menu-toggle {
+  display: block;
+  font-size: 1.8em;
+  padding: 8px;
+  margin-left: 10px;  /* تثبيت في اليسار */
+  color: white;
+  transform: translateY(6px);
+  z-index: 1100;
+}
+
+/*         .menu-toggle {
                       display: block;
-/*                       position: relative; */
+/*                       position: relative; 
                       z-index: 1100;
                       font-size: 1.8em;
                       padding: 8px;
@@ -808,7 +819,7 @@
                       margin-right: 10px;
                       color: white;
                       transform: translateY(6px);
-                    }
+                    } */
 /*       .menu-toggle {
                     display: block;
                     margin-left: auto;
@@ -816,13 +827,13 @@
                      } */
 
       nav {
-            flex-wrap: wrap;  
+/*             flex-wrap: wrap;   */
             height: 70px;
             padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
+/*             flex-wrap: wrap; */
             position: fixed;
             top: 0;
               left: 0;
@@ -945,22 +956,35 @@
 
 
 
-      #toggle-theme {
+        #toggle-theme {
+  position: absolute;
+  top: 70px;         /* أسفل شريط التنقل */
+  right: 20px;       /* جهة اليمين */
+  width: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  z-index: 3001;     /* فوق القائمة */
+}
+
+/*       #toggle-theme {
                       order: 3;
                       width: 100%;
                       text-align: right;
                       margin-top: 10px;
-                      margin-left: auto;    /* يحرك الزر يمين */
+                      margin-left: auto;    
                       margin-right: 0;      
                       background: none;
                       border: none;
                       cursor: pointer;
                       display: flex;
                       align-items: center;
-                      position: relative;
+                      position: absolute;
                       z-index: 1000;
                     }
-
+ */
       #toggle-theme img {
                         width: 28px;
                         height: 28px;
