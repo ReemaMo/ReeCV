@@ -869,10 +869,27 @@ body.dark-mode::before {
 
 
   <nav>
+
+          <!-- زر تغيير المظهر -->
+    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
+    <img id="theme-icon" 
+       src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
+       alt="Moon Icon" 
+       width="32" height="32" />
+</button> 
     
       <!-- زر القائمة للجوال -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    
+
+
+      <!-- روابط القائمة -->
+    <div class="nav-links" id="navLinks">
+    <a href="#about">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#vision">Vision</a>
+    <a href="#contact">Contact</a>
+      </div>
 
     
     <!-- 30 نجمة -->
@@ -890,21 +907,8 @@ body.dark-mode::before {
     
 
     
-  <!-- روابط القائمة -->
-    <div class="nav-links" id="navLinks">
-    <a href="#about">About Me</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#vision">Vision</a>
-    <a href="#contact">Contact</a>
-      </div>
-      <!-- زر تغيير المظهر -->
-    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
-  <img id="theme-icon" 
-       src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
-       alt="Moon Icon" 
-       width="32" height="32" />
-</button> 
+
+
 
   </nav>
   
