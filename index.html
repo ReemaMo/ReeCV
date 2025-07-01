@@ -795,9 +795,6 @@
     font-size: 1.8em;
   }
 
-  .vision-text {
-    font-size: 1.1em;
-  }
 
 
       
@@ -876,6 +873,14 @@ body.dark-mode::before {
       <!-- زر القائمة للجوال -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
     
+  <!-- زر تغيير المظهر -->
+    <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
+  <img id="theme-icon" 
+       src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
+       alt="Moon Icon" 
+       width="32" height="32" />
+</button> 
+    
     <!-- 30 نجمة -->
     <span class="star"></span><span class="star"></span><span class="star"></span>
     <span class="star"></span><span class="star"></span><span class="star"></span>
@@ -900,13 +905,7 @@ body.dark-mode::before {
     <a href="#contact">Contact</a>
       </div>
 
-  <!-- زر تغيير المظهر -->
-<button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
-  <img id="theme-icon" 
-       src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
-       alt="Moon Icon" 
-       width="32" height="32" />
-</button> 
+
   </nav>
   
   <div class="overlay"></div>
