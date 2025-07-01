@@ -16,97 +16,248 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+    
+/* ----------------------------
+   1. تنسيق الخطوط والألوان والخلفية
+----------------------------- */ 
+  body {
+        font-family: 'Segoe UI', sans-serif;
+        color: white;
+        line-height: 1.6;
+        background: linear-gradient(
+                                to bottom,
+                                rgba(0, 0, 0, 0.7) 0%,
+                                rgba(0, 0, 0, 0.65) 15%,
+                                rgba(0, 0, 0, 0.6) 30%,
+                                rgba(0, 0, 0, 0.55) 45%,
+                                rgba(0, 0, 0, 0.6) 60%,
+                                rgba(0, 0, 0, 0.7) 75%,
+                                rgba(0, 0, 0, 0.8) 90%,
+                                rgba(0, 0, 0, 0.9) 100%
+                                                           ),
+         url('https://www.everwallpaper.co.uk/cdn/shop/collections/misty-forest-living-room-wallpaper-design.jpg?v=1660210251');
+         background-size: cover;
+         background-position: center top;
+         background-repeat: no-repeat;
+         background-attachment: fixed;
+         transition: background 0.5s ease-in-out;
+         backdrop-filter: blur(4px);
+         -webkit-backdrop-filter: blur(4px);
+      }
 
-     
-@keyframes slideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+/* ----------------------------
+   2. إعدادات شريط التنقل وتثبيته وتأثير الخلفية
+----------------------------- */
+    nav {
+         position: sticky;
+         top: 0;
+         width: 100%;
+         height: 70px;
+         padding: 12px 0;
+         z-index: 1000;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 30px;
+         background-color: rgba(0, 0, 0, 0.6);
+         backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+         flex-wrap: wrap;
+        }
 
-@keyframes blink {
-  0% { border-color: rgba(255,255,255,0.7); }
-  50% { border-color: transparent; }
-  100% { border-color: rgba(255,255,255,0.7); }
-}
+    nav.scrolled {
+                 background-color: rgba(0, 0, 0, 0.75);
+                 }
+
+    nav::after {
+                display: none;
+               }
+    
+            /* إعدادات النجوم الصغيرة  */
+    nav .star {
+               position: absolute;
+               width: 2px;
+               height: 2px;
+               background: white;
+               border-radius: 50%;
+               opacity: 0.7;
+               animation: twinkle 3s infinite ease-in-out alternate;
+              }
+
+    nav .star:nth-child(1)  { top: 5px;   left: 3%;   animation-delay: 0.1s; }
+    nav .star:nth-child(2)  { top: 20px;  left: 6%;   animation-delay: 1.3s; }
+    nav .star:nth-child(3)  { top: 12px;  left: 10%;  animation-delay: 2.1s; }
+    nav .star:nth-child(4)  { top: 40px;  left: 13%;  animation-delay: 0.6s; }
+    nav .star:nth-child(5)  { top: 25px;  left: 17%;  animation-delay: 1.7s; }
+    nav .star:nth-child(6)  { top: 7px;   left: 20%;  animation-delay: 2.9s; }
+    nav .star:nth-child(7)  { top: 35px;  left: 24%;  animation-delay: 0.3s; }
+    nav .star:nth-child(8)  { top: 15px;  left: 28%;  animation-delay: 2.2s; }
+    nav .star:nth-child(9)  { top: 8px;   left: 32%;  animation-delay: 1.1s; }
+    nav .star:nth-child(10) { top: 50px;  left: 35%;  animation-delay: 0.5s; }
+    nav .star:nth-child(11) { top: 4px;   left: 39%;  animation-delay: 1.9s; }
+    nav .star:nth-child(12) { top: 30px;  left: 42%;  animation-delay: 0.8s; }
+    nav .star:nth-child(13) { top: 18px;  left: 45%;  animation-delay: 2.6s; }
+    nav .star:nth-child(14) { top: 10px;  left: 49%;  animation-delay: 1.2s; }
+    nav .star:nth-child(15) { top: 28px;  left: 52%;  animation-delay: 3s; }
+    nav .star:nth-child(16) { top: 14px;  left: 55%;  animation-delay: 0.4s; }
+    nav .star:nth-child(17) { top: 37px;  left: 58%;  animation-delay: 1.5s; }
+    nav .star:nth-child(18) { top: 6px;   left: 61%;  animation-delay: 2.5s; }
+    nav .star:nth-child(19) { top: 22px;  left: 65%;  animation-delay: 0.2s; }
+    nav .star:nth-child(20) { top: 11px;  left: 68%;  animation-delay: 2.3s; }
+    nav .star:nth-child(21) { top: 48px;  left: 71%;  animation-delay: 1.4s; }
+    nav .star:nth-child(22) { top: 3px;   left: 74%;  animation-delay: 0.7s; }
+    nav .star:nth-child(23) { top: 16px;  left: 78%;  animation-delay: 2.8s; }
+    nav .star:nth-child(24) { top: 9px;   left: 81%;  animation-delay: 1.8s; }
+    nav .star:nth-child(25) { top: 26px;  left: 84%;  animation-delay: 0.9s; }
+    nav .star:nth-child(26) { top: 13px;  left: 87%;  animation-delay: 1.6s; }
+    nav .star:nth-child(27) { top: 38px;  left: 90%;  animation-delay: 2.7s; }
+    nav .star:nth-child(28) { top: 17px;  left: 93%;  animation-delay: 1s; }
+    nav .star:nth-child(29) { top: 6px;   left: 96%;  animation-delay: 0.6s; }
+    nav .star:nth-child(30) { top: 31px;  left: 99%;  animation-delay: 2.4s; }
+          /* حركة النجوم */
+    @keyframes twinkle {
+      0%   { opacity: 0.3; transform: scale(1); box-shadow: 0 0 0px white; }
+      50%  { opacity: 1;   transform: scale(1.3); box-shadow: 0 0 4px white; }
+      100% { opacity: 0.3; transform: scale(1); box-shadow: 0 0 0px white; }
+    }
+
+      nav a {
+              color: white;
+              text-decoration: none;
+              font-weight: bold;
+              transition: 0.3s;
+              position: relative;
+              z-index: 1;
+            }
+
+      nav a:hover {
+                   color: white;
+                   text-shadow: 0 0 10px white, 0 0 20px white;
+                  }
+      
+          /*  تأثير الإشعاع الأبيض عند النقر */
+      nav a:active {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    box-shadow: 0 0 10px 4px rgba(255, 255, 255, 0.5);
+                    border-radius: 8px;
+                    transition: all 0.2s ease;
+                   }
+
+    .nav-links {
+                display: flex;
+                justify-content: center; 
+                align-items: center;     
+                gap: 37px;              
+                flex: 1;
+               }
+
+/* -------------------------------------
+   3. الحركات (Animations)
+-------------------------------------- */
+    @keyframes fadeSlideIn {
+      to {
+          opacity: 1;
+          transform: translateY(0);
+         }
+    }
+        
+    @keyframes slideIn {
+      to {
+          opacity: 1;
+          transform: translateY(0);
+         }
+    }
+    
+    @keyframes blink {
+                      0% { border-color: rgba(255,255,255,0.7); }
+                      50% { border-color: transparent; }
+                      100% { border-color: rgba(255,255,255,0.7); }
+                     }
+    
+    @keyframes bounce {
+                      0%, 100% { transform: translateY(0); }
+                      50% { transform: translateY(10px); }
+                      }
+
+/* -------------------------------------
+  4. الهيكل الأساسي للرأس (Header Layout)
+-------------------------------------- */
 
       .custom-header {
-  height: 100vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
-  color: white;
-}
+                      height: 100vh;
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      padding: 0 10%;
+                      color: white;
+                     }
       
-  .left-block, .right-block {
-  flex: 1;
-}
+      .left-block, .right-block {
+                               flex: 1;
+                                }
+      .right-block {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                   }
 
-.custom-name {
-  font-family: 'Great Vibes', cursive;
-  font-size: 6em;
-  margin-bottom: 30px;
-  margin-top: 40px;
-  margin-left: -20px;
-  animation: fadeSlideIn 1.2s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
-    word-spacing: 0.3em;
-}
- 
-.intro-button {
-  padding: 15px 30px;
-  font-size: 1.2em;
-  border: none;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  backdrop-filter: blur(6px);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideIn 1s ease-out 3s forwards;
-}
+/* -------------------------------------
+   5. الاسم والعنوان الرئيسي
+-------------------------------------- */
+      .custom-name {
+                  font-family: 'Great Vibes', cursive;
+                  font-size: 6em;
+                  margin-bottom: 30px;
+                  margin-top: 40px;
+                  margin-left: -20px;
+                  animation: fadeSlideIn 1.2s ease-out forwards;
+                  opacity: 0;
+                  transform: translateY(20px);
+                  word-spacing: 0.3em;
+                  }
+       header {
+              margin-top: 0;
+              text-align: center;
+              padding: 80px 35px 50px;
+              background: none;
+              color: white;
+             }
 
-  .right-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+       header h1 {
+                font-size: 4em;
+                margin-bottom: 10px;
+                font-weight: bold;
+               }
+
+/* -------------------------------------
+   6.   (Intro Button)
+-------------------------------------- */
+        .intro-button {
+                      padding: 15px 30px;
+                      font-size: 1.2em;
+                      border: none;
+                      border-radius: 50px;
+                      background: rgba(255, 255, 255, 0.1);
+                      color: white;
+                      backdrop-filter: blur(6px);
+                      cursor: pointer;
+                      transition: all 0.3s ease-in-out;
+                      border: 1px solid rgba(255, 255, 255, 0.3);
+                      position: relative;
+                      overflow: hidden;
+                      opacity: 0;
+                      transform: translateY(20px);
+                      animation: slideIn 1s ease-out 3s forwards;
+                     }
+            
+        .intro-button:hover {
+                            background: rgba(255, 255, 255, 0.2);
+                            box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
+                           }
 
 
-
-.intro-button:hover {
-  background: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
-}
-
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-   
-  header {
-    margin-top: 0;
-    text-align: center;
-    padding: 80px 35px 50px;
-    background: none;
-    color: white;
-  }
-
-  header h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
 
   /* تأثير الدخول fade + slide */
   .fade-slide {
@@ -118,18 +269,15 @@
     animation-timing-function: ease-out;
   }
 
-  @keyframes fadeSlideIn {
+/*   @keyframes fadeSlideIn {
     to {
       opacity: 1;
       transform: translateY(0);
     }
-  }
+  } */
 
 
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(10px); }
-  }
+
 
 .about-section {
   padding: 100px 30px;
@@ -321,7 +469,7 @@
 }
   
 
-  body {
+/*   body {
   font-family: 'Segoe UI', sans-serif;
   color: white;
   line-height: 1.6;
@@ -344,7 +492,7 @@ url('https://www.everwallpaper.co.uk/cdn/shop/collections/misty-forest-living-ro
   transition: background 0.5s ease-in-out;
     backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-}
+} */
     .overlay {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -356,7 +504,7 @@ url('https://www.everwallpaper.co.uk/cdn/shop/collections/misty-forest-living-ro
   display: block;
 }
    
-nav {
+/* nav {
   position: sticky;
   top: 0;
   width: 100%;
@@ -458,7 +606,7 @@ nav a:active {
   align-items: center;     /* وسط عمودي */
   gap: 37px;               /* مسافة بين الروابط */
   flex: 1;
-}
+} */
     
     header {
       margin-top: 0;
