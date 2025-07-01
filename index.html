@@ -826,7 +826,7 @@
   width: 30px;
   height: 30px;
   transition: transform 0.3s ease, filter 0.3s ease;
-  margin-left: -14px;
+  margin-left: 9px;
 }
 
 /* تأثير الإشعاع عند التمرير */
@@ -849,6 +849,9 @@ body.dark-mode::before {
   background: rgba(0, 0, 0, 0.6); /* تغطية شبه شفافة عند الوضع الليلي */
 }
 
+#theme-icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(100%) hue-rotate(180deg);
+}
 
   </style>
 </head>
