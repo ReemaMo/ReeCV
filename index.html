@@ -597,8 +597,10 @@
               position: fixed;
               top: 0; left: 0; right: 0; bottom: 0;
               background-color: rgba(0,0,0,0.7);
-              z-index: 999; 
+              z-index: 900; 
               display: none;
+              width: 100%;
+              height: 100vh;
              }
     
     .overlay.active {
@@ -803,6 +805,7 @@
                       top: 5px;
                       margin-left: auto;
                       margin-right: 15px;
+                      margin-right: 10px;
                     }
 /*       .menu-toggle {
                     display: block;
@@ -831,8 +834,9 @@
                     align-items: center;
                     position: fixed;
                     top: 70px;
-                    left: 50%; 
-/*                     width: 90%; */
+                    left: 0;
+                    right: 0;
+                    width: 100%; 
                     transform: translateX(-50%);
                     background-color: rgba(0, 0, 0, 0.95);
                     padding: 20px 0;
@@ -840,6 +844,7 @@
                     margin-top: 0; 
                     z-index: 1000;
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+                    text-align: center;
                   }
     
     .nav-links.active {
