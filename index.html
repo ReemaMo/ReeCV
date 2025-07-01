@@ -793,11 +793,20 @@
         
 
        /* ==== شريط التنقل و القائمة ==== */
-      .menu-toggle {
+        .menu-toggle {
+                      display: block;
+                      position: relative;
+                      z-index: 1100;
+                      font-size: 1.8em;
+                      padding: 8px;
+                      margin: 0 15px;
+                      top: 5px;
+                    }
+/*       .menu-toggle {
                     display: block;
                     margin-left: auto;
                     margin-right: 15px;
-                     }
+                     } */
 
       nav {
             flex-wrap: wrap;  
@@ -820,12 +829,13 @@
                     align-items: center;
                     position: fixed;
                     top: 70px;
-                    left: 0; 
-                    width: 100%;
+                    left: 50%; 
+                    width: 90%;
+                    transform: translateX(-50%);
                     background-color: rgba(0, 0, 0, 0.95);
                     padding: 20px 0;
                     border-radius: 0 0 10px 10px;
-                    margin-top: 0;
+/*                     margin-top: 0; */
                     z-index: 1000;
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
                   }
