@@ -1194,7 +1194,8 @@
                       }
               });
       </script>
-    
+
+<!--  اضافة تأثير على عنوان قسم الرؤية عند ظهوره داخل نافذة العرض أثناء التمرير -->
       <script>
             window.addEventListener("scroll", function () {
                     const vision = document.getElementById("vision");
@@ -1208,7 +1209,9 @@
                }
             });
     </script>
+  
 
+<!-- إرسال الرسالة بدون تحديث الصفحة وعرض رسالة شكر عند نجاح الإرسال أو تنبيه عند الفشل -->
     <script>
           function showThankYou(event) {
                   event.preventDefault(); // يمنع الإرسال العادي
@@ -1234,6 +1237,7 @@
       
    </script>
 
+<!--   إغلاق قائمة التنقل والخلفية الداكنة عند النقر على رابط أو على الخلفية نفسها -->
     <script>
           const navLinks = document.querySelector('.nav-links');
           const overlay = document.querySelector('.overlay');
@@ -1253,15 +1257,17 @@
                   overlay.classList.remove('active');
           });
     </script>
-  
+ 
+   <!--  تبديل ظهور وإخفاء قائمة التنقل والخلفية الداكنة عند الضغط على زر القائمة -->
   <script>
       function toggleMenu() {
               document.getElementById("navLinks").classList.toggle("active");
               document.querySelector(".overlay").classList.toggle("active");
                             }
-</script>
+ </script>
+  
 
-
+<!-- تبديل وضع الواجهة بين النهاري والليلي مع تغيير أيقونة الحالة -->
     <script>
             const toggleBtn = document.getElementById('toggle-theme');
             const themeIcon = document.getElementById('theme-icon');
