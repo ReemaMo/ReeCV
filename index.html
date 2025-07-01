@@ -810,8 +810,31 @@
                }
       
 }
+    /* زر الوضع الليلي */
+#toggle-theme {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
 
-/* الوضع الافتراضي: تفتيح */
+#toggle-theme img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* تأثير الإشعاع عند التمرير */
+#toggle-theme:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px white);
+}
+
+/* الوضع العادي */
 body {
   background-color: white;
   color: black;
@@ -821,7 +844,7 @@ body {
 /* الوضع الداكن */
 body.dark-mode {
   background-color: #121212;
-  color: #e0e0e0;
+  color: #f0f0f0;
 }
 
 
@@ -829,7 +852,6 @@ body.dark-mode {
 </head>
   
 <body>
-
 
 
   <nav>
@@ -860,10 +882,11 @@ body.dark-mode {
     <a href="#vision">Vision</a>
     <a href="#contact">Contact</a>
       </div>
-     <button id="toggle-theme" aria-label="Toggle dark/light mode" style="font-size: 1.5em; background:none; border:none; cursor:pointer; color:white;">
-   🌞
-   </button>
-    
+
+  <!-- زر تغيير المظهر -->
+  <button id="toggle-theme" aria-label="Toggle Theme">
+    <img id="theme-icon" src="https://cdn-icons-png.flaticon.com/512/869/869869.png" alt="Theme Icon" />
+  </button>  
   </nav>
   
   <div class="overlay"></div>
@@ -1277,19 +1300,21 @@ function toggleMenu() {
 }
 </script>
 
-    <script>
-    const toggleBtn = document.getElementById('toggle-theme');
 
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
+  <script>
+  const toggleBtn = document.getElementById('toggle-theme');
+  const themeIcon = document.getElementById('theme-icon');
 
-      if (document.body.classList.contains('dark-mode')) {
-        toggleBtn.textContent = '🌙'; // القمر لو الوضع داكن
-      } else {
-        toggleBtn.textContent = '🌞'; // الشمس لو الوضع فاتح
-      }
-    });
-  </script>
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    if (document.body.classList.contains('dark-mode')) {
+      themeIcon.src = 'https://cdn-icons-png.flaticon.com/512/6536/6536140.png'; // قمر حقيقي
+    } else {
+      themeIcon.src = 'https://cdn-icons-png.flaticon.com/512/869/869869.png'; // شمس لطيفة
+    }
+  });
+</script>
   
 </body>
 </html>
