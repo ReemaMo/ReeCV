@@ -160,18 +160,9 @@
                 gap: 37px;              
                 flex: 1; 
                 margin-left: 100px;
-                   position: absolute;
                }
 
             
-        .nav-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  padding: 0 20px;
-  position: relative; /* ✅ هذا مهم لتمركز .nav-links */
-        }
 
 
 /* -------------------------------------
@@ -870,10 +861,7 @@
     margin: 0;
     padding: 0;
     }
-.nav-inner {
-    flex-direction: row-reverse;
-    padding: 10px;
-  }
+
 
         
        /* ==== زر الدخول ==== */
@@ -971,7 +959,7 @@
   
       <!-- زر القائمة للجوال -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  <div class="nav-inner">
+
       <!-- روابط القائمة -->
     <div class="nav-links" id="navLinks">
           <a href="#about">About Me</a>
@@ -980,7 +968,7 @@
           <a href="#vision">Vision</a>
           <a href="#contact">Contact</a>
     </div>
-      </div>
+     
 
                         <!-- زر تغيير المظهر -->
     <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
