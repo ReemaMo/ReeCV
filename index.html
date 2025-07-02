@@ -799,7 +799,17 @@
 
 
 
+         .menu-toggle {
+    order: 2;
+    position: relative;
+    margin-right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+  }
+/* 
         .menu-toggle {
+                      
                       display: block;
                       position: absolute; 
                       z-index: 1100;
@@ -811,7 +821,7 @@
                       margin-right: 15px;
                       color: white;
                       transform: translateY(6px);
-                    } 
+                    }  */
 /*       .menu-toggle {
                     display: block;
                     margin-left: auto;
@@ -831,8 +841,29 @@
               left: 0;
             right: 0;
           }
+
+          #toggle-theme {
+    order: 1;
+    position: relative;
+    margin-left: 0;
+  }
+
+          .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    display: none;
+    border-radius: 10px;
+    z-index: 999;
+  }
         
-        .nav-links {
+/*         .nav-links {
                     display: none;
                     flex-direction: column;
                     justify-content: center;
@@ -840,19 +871,19 @@
                     position: fixed;
                     top: 70px;
                     left: 50%;
-/*                     right: 0; */
+/*                     right: 0; 
                     width: 90%; 
                     max-width: 400px;
                     transform: translateX(-50%); 
                     background-color: rgba(0, 0, 0, 0.95);
                     padding: 20px 0;
                     border-radius: 0 0 10px 10px;
-/*                     margin-top: 0;  */
+/*                     margin-top: 0;  
                     z-index: 3000;
                     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
                     text-align: center;
                   }
-    
+     */
     .nav-links.active {
                       display: flex;
                       }
@@ -863,7 +894,7 @@
                   width: 100%;
                   text-align: center;
                   justify-content: center;
-                  display: flex;
+/*                   display: flex; */
                  }
         
        /* ==== زر الدخول ==== */
