@@ -9,6 +9,7 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
   
 <!-- ----------------------------
       Internal CSS Code
@@ -256,7 +257,6 @@
    6.   عناصر عامة في الموقع
 ---------------------------------------------- */
     
-
     section {
              padding: 80px 20px;
              background: transparent;
@@ -297,7 +297,6 @@
 /* ---------------------------------------------
    6.    التعتيم – زر الوضع الليلي (Dark Mode Toggle)
 ---------------------------------------------- */          
-
     
       #toggle-theme {
                     position: relative;
@@ -344,7 +343,7 @@
 
 
 /* -------------------------------------
-   7.   (Intro Button)
+   7.   زر الدخول (Intro Button)
 -------------------------------------- */
         .intro-button {
                       padding: 15px 30px;
@@ -368,8 +367,6 @@
                             background: rgba(255, 255, 255, 0.2);
                             box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.3);
                            }
-
-
 
         /* تأثير الدخول  */
         .fade-slide {
@@ -555,8 +552,7 @@
 /* ---------------------------------------------
    10.    قسم المهارات (Skills Section)
 ---------------------------------------------- */  
-    
-    
+       
      #skills {
             padding: 80px 20px;
             background: rgba(0, 0, 0, 0.5);
@@ -618,7 +614,6 @@
 /* ---------------------------------------------
    11.    قسم الرؤية (Vision Section)
 ---------------------------------------------- */
-
 
     .vision-section {
                     padding: 100px 30px;
@@ -771,180 +766,175 @@
 /* ---------------------------------------------
     13.   اعدادات الجوال  
 ---------------------------------------------- */ 
+    
       @media (max-width: 600px) {
         
-        
-        /* ==== الترويسة (Header) ==== */
-       header h1 {
-                font-size: 2.2em;
-                 }
-      .custom-header {
-                    flex-direction: column;
-                    text-align: center;
-                    padding: 60px 20px;
-                     }  
-      .custom-name {
-                    font-size: 3.2em;
-                    margin-top: 209px !important;
-                    margin-left: 0;
-                    }
-          
-        /* ==== المحتوى العام ==== */    
-      body {
-           font-size: 14px;
-           }
-    
-      h2 {
-         font-size: 1.4em;
-         }
-        
-
-       /* ==== شريط التنقل و القائمة ==== */
-
-
-
-      nav {
-            height: 70px;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            left: 0;
-            right: 0;
-          }
-
-
-      .nav-links {
-                    position: absolute;
-                    top: 60px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 90%;
-                    background: rgba(0, 0, 0, 0.9);
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 20px;
-                    display: none;
-                    border-radius: 10px;
-                    z-index: 999;
-                 }
-        
-
-    .nav-links.active {
+                  /* ==== الترويسة (Header) ==== */
+                 header h1 {
+                          font-size: 2.2em;
+                           }
+                .custom-header {
+                              flex-direction: column;
+                              text-align: center;
+                              padding: 60px 20px;
+                               }  
+                .custom-name {
+                              font-size: 3.2em;
+                              margin-top: 209px !important;
+                              margin-left: 0;
+                              }
+                    
+                  /* ==== المحتوى العام ==== */    
+                body {
+                     font-size: 14px;
+                     }
+              
+                h2 {
+                   font-size: 1.4em;
+                   }
+                  
+                 /* ==== شريط التنقل و القائمة ==== */
+                nav {
+                      height: 70px;
+                      padding: 0 20px;
                       display: flex;
-                      }
-    
-    .nav-links a {
-                  padding: 12px 0;
-                  font-size: 1.2em;
-                  width: 100%;
-                  text-align: center;
-                  justify-content: center;
-                 }
-        
-          #toggle-theme {
-    order: 1;
-    position: relative;
-    margin-left: 0;
-  }
-         .menu-toggle {
-    order: 2;
-    font-size: 2em;
-    background: none;
-    color: white;
-    border: none;
-    cursor: pointer;
-    display: block;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    padding: 0;
-    }
-
-
-        
-       /* ==== زر الدخول ==== */
-        .intro-button {
-                      font-size: 0.9em;
-                      padding: 8px 14px;
-                      }
-        
-       /* ==== قسم about me ==== */
-     .about-section {
-                    padding: 35px 18px;
-                    margin: 50px auto;
-                    max-width: 95%;
-                    border-radius: 12px;
-                    scroll-margin-top: 100px; 
-                    background: rgba(255, 255, 255, 0.03);
+                      justify-content: space-between;
+                      align-items: center;
+                      position: sticky;
+                      top: 0;
+                      left: 0;
+                      right: 0;
                     }
-
-      .about-content h2 {
-                        font-size: 1.8em; 
-                        text-align: center;
-                        margin-bottom: 15px;
-                        color: white;
-                        }
-    
-      .about-content p {
-                        font-size: 1.05em; 
-                        line-height: 1.7;
-                        text-align: center; 
-                        padding: 10px 12px;
-                        color: #f2f2f2;
-                        }  
-        
-        /* ==== قسم المشاريع ==== */    
-      .project-card {
-                    width: 90%;
-                    height: auto;
-                    margin: 0 auto;
-                   }
-    
-        .project-card h3 {
-                          font-size: 1em;
-                          white-space: normal;
-                          overflow: visible;
-                          }
-    
-      .project-details {
-                        width: 95vw;
-                        max-height: 80vh;
-                        font-size: 0.9em;
-                        padding: 15px;
-                       }
-        
-         /* ==== قسم المهارات ==== */  
-      .skill-bar {
-                 height: 14px;
-                 }
-      .skill p {
-                font-size: 1em;
-               }
-    
-          /* ====  قسم الرؤية ==== */  
-      .vision-text {
-        font-size: 1.3em;
-        padding: 20px;
-      }
-    
-      .vision-title {
-        font-size: 1.8em;
-      }
-    
-    
-        
-      .left-block, .right-block {
-                                width: 100%;
+                   
+                .nav-links {
+                              position: absolute;
+                              top: 60px;
+                              left: 50%;
+                              transform: translateX(-50%);
+                              width: 90%;
+                              background: rgba(0, 0, 0, 0.9);
+                              flex-direction: column;
+                              align-items: center;
+                              padding: 20px;
+                              display: none;
+                              border-radius: 10px;
+                              z-index: 999;
+                           }
+                  
+          
+              .nav-links.active {
+                                display: flex;
                                 }
-    
-      .right-block {
-                    margin-bottom: 20px;
-                   }
-                               }
+              
+              .nav-links a {
+                            padding: 12px 0;
+                            font-size: 1.2em;
+                            width: 100%;
+                            text-align: center;
+                            justify-content: center;
+                           }
+                  
+              #toggle-theme {
+                             order: 1;
+                             position: relative;
+                             margin-left: 0;
+                            }
+                  
+               .menu-toggle {
+                             order: 2;
+                             font-size: 2em;
+                             background: none;
+                             color: white;
+                             border: none;
+                             cursor: pointer;
+                             display: block;
+                             position: relative;
+                             top: 50%;
+                             transform: translateY(-50%);
+                             margin: 0;
+                             padding: 0;
+                            }
+          
+                  
+                 /* ==== زر الدخول ==== */
+                .intro-button {
+                                font-size: 0.9em;
+                                padding: 8px 14px;
+                                }
+                  
+                 /* ==== قسم about me ==== */
+               .about-section {
+                              padding: 35px 18px;
+                              margin: 50px auto;
+                              max-width: 95%;
+                              border-radius: 12px;
+                              scroll-margin-top: 100px; 
+                              background: rgba(255, 255, 255, 0.03);
+                              }
+          
+                .about-content h2 {
+                                  font-size: 1.8em; 
+                                  text-align: center;
+                                  margin-bottom: 15px;
+                                  color: white;
+                                  }
+              
+                .about-content p {
+                                  font-size: 1.05em; 
+                                  line-height: 1.7;
+                                  text-align: center; 
+                                  padding: 10px 12px;
+                                  color: #f2f2f2;
+                                  }  
+                  
+                  /* ==== قسم المشاريع ==== */    
+                .project-card {
+                              width: 90%;
+                              height: auto;
+                              margin: 0 auto;
+                             }
+              
+                .project-card h3 {
+                                    font-size: 1em;
+                                    white-space: normal;
+                                    overflow: visible;
+                                    }
+              
+                .project-details {
+                                  width: 95vw;
+                                  max-height: 80vh;
+                                  font-size: 0.9em;
+                                  padding: 15px;
+                                 }
+                  
+                   /* ==== قسم المهارات ==== */  
+                .skill-bar {
+                           height: 14px;
+                           }
+                .skill p {
+                          font-size: 1em;
+                         }
+              
+                    /* ====  قسم الرؤية ==== */  
+                .vision-text {
+                  font-size: 1.3em;
+                  padding: 20px;
+                }
+              
+                .vision-title {
+                  font-size: 1.8em;
+                }
+              
+              
+                  
+                .left-block, .right-block {
+                                          width: 100%;
+                                          }
+              
+                .right-block {
+                              margin-bottom: 20px;
+                             }
+          }
     
   </style>
 </head>
@@ -955,73 +945,66 @@
   
 <body>
 
+      <nav>
+                <!-- 30 نجمة -->
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span>
+                <span class="star"></span><span class="star"></span><span class="star"></span> 
+                
+                  <!-- زر القائمة للجوال -->
+              <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            
+                  <!-- روابط القائمة -->
+              <div class="nav-links" id="navLinks">
+                      <a href="#about">About Me</a>
+                      <a href="#experience">Experience</a>
+                      <a href="#skills">Skills</a>
+                      <a href="#vision">Vision</a>
+                      <a href="#contact">Contact</a>
+              </div>
 
-
-  <nav>
-     
-    <!-- 30 نجمة -->
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span>
-    <span class="star"></span><span class="star"></span><span class="star"></span> 
-    
-      <!-- زر القائمة للجوال -->
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-      <!-- روابط القائمة -->
-    <div class="nav-links" id="navLinks">
-          <a href="#about">About Me</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#vision">Vision</a>
-          <a href="#contact">Contact</a>
-    </div>
-    
-
-
-                        <!-- زر تغيير المظهر -->
-     <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
-        <img id="theme-icon" 
-             src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
-             alt="Moon Icon" 
-             width="32" height="32" />
-    </button>  
-
-
-
-  
- <div class="overlay"></div>      
-  </nav>
+                  <!-- زر تغيير المظهر -->
+              <button id="toggle-theme" aria-label="Toggle dark/light mode" style="background:none; border:none; cursor:pointer;">
+                    <img id="theme-icon" 
+                         src="https://cdn-icons-png.flaticon.com/512/581/581601.png" 
+                         alt="Moon Icon" 
+                         width="32" height="32" />
+              </button>  
+      
+             <div class="overlay"></div>  
+        
+      </nav>
 
 
   
  
+  
+       <header class="custom-header">
+                <div class="left-block">
+                      <h1 class="custom-name">Reema  Alkhalifa</h1>
+                      <button class="intro-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
+                               Get to know me
+                      </button>
+                </div> 
+       </header>
 
- <header class="custom-header">
-          <div class="left-block">
-                <h1 class="custom-name">Reema  Alkhalifa</h1>
-                <button class="intro-button" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">
-                         Get to know me
-                </button>
-          </div> 
- </header>
 
 
-
-    <section id="about" class="about-section">
-            <div class="about-content">
-                  <h2>About Me</h2>
-                  <p>
-                    Computer Science undergraduate with a strong focus on web design and development. I have gained practical experience through academic projects and am currently working on my graduation project, which involves building a web application. I am passionate about turning ideas into interactive digital experiences and believe that hands-on learning is key to professional growth.
-                  </p>
-            </div>
-    </section>
+      <section id="about" class="about-section">
+              <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>
+                      Computer Science undergraduate with a strong focus on web design and development. I have gained practical experience through academic projects and am currently working on my graduation project, which involves building a web application. I am passionate about turning ideas into interactive digital experiences and believe that hands-on learning is key to professional growth.
+                    </p>
+              </div>
+      </section>
 
 
       <section id="experience">
@@ -1139,166 +1122,170 @@
                       </div>
           </div>
     </section>
-    
-      
-        
+     
     
       <footer>
              <p>&copy; 2025 Reema. All rights reserved.</p>
       </footer>
 
-      <script>
-              const nav = document.querySelector('nav');
-              window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                  nav.classList.add('scrolled');
-                } else {
-                  nav.classList.remove('scrolled');
-                }
-              });
-     </script>
-
-     <script>
-            const skillBars = document.querySelectorAll('.progress');
-          
-            function animateSkillBars() {
-              skillBars.forEach((bar, index) => {
-                const value = bar.getAttribute('data-skill');
-                bar.style.width = '0';
-                bar.classList.remove('glow');
-                setTimeout(() => {
-                  bar.style.width = value;
-                  bar.addEventListener('transitionend', () => {
-                    bar.classList.add('glow');
-                  }, { once: true });
-                }, index * 200 + 200);
-              });
-            }
-          
-            const observer = new IntersectionObserver(entries => {
-              entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  animateSkillBars();
-                }
-              });
-            }, { threshold: 0.5 });
-          
-            observer.observe(document.querySelector('#skills'));
-     </script>
-
-
-      <script>
-            window.addEventListener('scroll', () => {
-                  const text = document.querySelector('.vision-text');
-                  const sectionTop = text.getBoundingClientRect().top;
-                  const screenHeight = window.innerHeight;
-              
-                  if (sectionTop < screenHeight - 100) {
-                    text.classList.add('visible');
+  
+<!-- ---------------------------------------------
+   JavaScript Code
+---------------------------------------------- -->  
+  
+  <!-- تغيير مظهر شريط التنقل عند التمرير لأسفل -->
+        <script>
+                const nav = document.querySelector('nav');
+                window.addEventListener('scroll', () => {
+                  if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                  } else {
+                    nav.classList.remove('scrolled');
                   }
+                });
+       </script>
+    
+       <!--  تبديل ظهور وإخفاء قائمة التنقل والخلفية الداكنة عند الضغط على زر القائمة -->
+    <script>
+        function toggleMenu() {
+                document.getElementById("navLinks").classList.toggle("active");
+                document.querySelector(".overlay").classList.toggle("active");
+                              }
+   </script>
+  
+    <!--   إغلاق قائمة التنقل والخلفية الداكنة عند النقر على رابط أو على الخلفية نفسها -->
+      <script>
+            const navLinks = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.overlay');
+            const menuToggle = document.querySelector('.menu-toggle');
+          
+            // إغلاق القائمة عند الضغط على أي رابط
+            document.querySelectorAll('.nav-links a').forEach(link => {
+              link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
+              });
+            });
+          
+            // إغلاق القائمة عند الضغط على الخلفية الداكنة
+            overlay.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
             });
       </script>
-          
-       <script>
-              const expSection = document.getElementById('experience');
+  
+      <!-- تبديل وضع الواجهة بين النهاري والليلي مع تغيير أيقونة الحالة -->
+      <script>
+              const toggleBtn = document.getElementById('toggle-theme');
+              const themeIcon = document.getElementById('theme-icon');
             
-              window.addEventListener('scroll', () => {
-                      const rect = expSection.getBoundingClientRect();
-                      if (rect.top < window.innerHeight - 80) {
-                        expSection.classList.add('visible');
-                      }
+              toggleBtn.addEventListener('click', () => {
+              document.body.classList.toggle('dark-mode');
+            
+                if (document.body.classList.contains('dark-mode')) {
+                 themeIcon.src = 'https://cdn-icons-png.flaticon.com/512/869/869869.png'; //sun
+                } else {
+                  themeIcon.src = 'https://cdn-icons-png.flaticon.com/512/581/581601.png'; //moon
+                }
               });
       </script>
-
-<!--  اضافة تأثير على عنوان قسم الرؤية عند ظهوره داخل نافذة العرض أثناء التمرير -->
-      <script>
-            window.addEventListener("scroll", function () {
-                    const vision = document.getElementById("vision");
-                    const title = document.querySelector(".vision-title");
-                    const rect = vision.getBoundingClientRect();
-                
-                    if (rect.top >= 0 && rect.top <= window.innerHeight * 0.6) {
-                        title.classList.add("flash");
-                    } else {
-                        title.classList.remove("flash");
-               }
-            });
-    </script>
   
-
-<!-- إرسال الرسالة بدون تحديث الصفحة وعرض رسالة شكر عند نجاح الإرسال أو تنبيه عند الفشل -->
-    <script>
-          function showThankYou(event) {
-                  event.preventDefault(); // يمنع الإرسال العادي
-                  const form = document.getElementById('contactForm');
-                  const message = document.getElementById('thankYouMessage');
+      <!--  إظهار قسم الخبرات/المشاريع عند التمرير للأسفل    -->
+         <script>
+                const expSection = document.getElementById('experience');
               
-                  // ترسل النموذج يدويًا
-                  fetch(form.action, {
-                          method: 'POST',
-                          body: new FormData(form),
-                          headers: {
-                                    Accept: 'application/json',
-                                  },
-                  }).then(response => {
-                        if (response.ok) {
-                                form.reset(); // يفرغ الحقول
-                                message.style.display = 'block';
-                        } else {
-                                alert('There was a problem. Please try again later.');
+                window.addEventListener('scroll', () => {
+                        const rect = expSection.getBoundingClientRect();
+                        if (rect.top < window.innerHeight - 80) {
+                          expSection.classList.add('visible');
                         }
-                  });
-          }
-      
-   </script>
-
-<!--   إغلاق قائمة التنقل والخلفية الداكنة عند النقر على رابط أو على الخلفية نفسها -->
-    <script>
-          const navLinks = document.querySelector('.nav-links');
-          const overlay = document.querySelector('.overlay');
-          const menuToggle = document.querySelector('.menu-toggle');
-        
-          // إغلاق القائمة عند الضغط على أي رابط
-          document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                  navLinks.classList.remove('active');
-                  overlay.classList.remove('active');
-            });
-          });
-        
-          // إغلاق القائمة عند الضغط على الخلفية الداكنة
-          overlay.addEventListener('click', () => {
-                  navLinks.classList.remove('active');
-                  overlay.classList.remove('active');
-          });
-    </script>
- 
-   <!--  تبديل ظهور وإخفاء قائمة التنقل والخلفية الداكنة عند الضغط على زر القائمة -->
-  <script>
-      function toggleMenu() {
-              document.getElementById("navLinks").classList.toggle("active");
-              document.querySelector(".overlay").classList.toggle("active");
-                            }
- </script>
-  
-
-  <!-- تبديل وضع الواجهة بين النهاري والليلي مع تغيير أيقونة الحالة -->
-    <script>
-            const toggleBtn = document.getElementById('toggle-theme');
-            const themeIcon = document.getElementById('theme-icon');
-          
-            toggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-          
-              if (document.body.classList.contains('dark-mode')) {
-               themeIcon.src = 'https://cdn-icons-png.flaticon.com/512/869/869869.png'; //sun
-              } else {
-                themeIcon.src = 'https://cdn-icons-png.flaticon.com/512/581/581601.png'; //moon
+                });
+        </script>
+    
+  <!-- تحريك أشرطة المهارات عند ظهور قسم المهارات في الشاشة -->
+       <script>
+              const skillBars = document.querySelectorAll('.progress');
+            
+              function animateSkillBars() {
+                skillBars.forEach((bar, index) => {
+                  const value = bar.getAttribute('data-skill');
+                  bar.style.width = '0';
+                  bar.classList.remove('glow');
+                  setTimeout(() => {
+                    bar.style.width = value;
+                    bar.addEventListener('transitionend', () => {
+                      bar.classList.add('glow');
+                    }, { once: true });
+                  }, index * 200 + 200);
+                });
               }
-            });
-    </script>
-
+            
+              const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    animateSkillBars();
+                  }
+                });
+              }, { threshold: 0.5 });
+            
+              observer.observe(document.querySelector('#skills'));
+       </script>
+    
   
+    <!--  اضافة تأثير على عنوان قسم الرؤية عند ظهوره داخل نافذة العرض أثناء التمرير -->
+        <script>
+              window.addEventListener("scroll", function () {
+                      const vision = document.getElementById("vision");
+                      const title = document.querySelector(".vision-title");
+                      const rect = vision.getBoundingClientRect();
+                  
+                      if (rect.top >= 0 && rect.top <= window.innerHeight * 0.6) {
+                          title.classList.add("flash");
+                      } else {
+                          title.classList.remove("flash");
+                 }
+              });
+      </script>
+   <!--  إظهار نص الرؤية عند التمرير لأسفل  -->
+        <script>
+              window.addEventListener('scroll', () => {
+                    const text = document.querySelector('.vision-text');
+                    const sectionTop = text.getBoundingClientRect().top;
+                    const screenHeight = window.innerHeight;
+                
+                    if (sectionTop < screenHeight - 100) {
+                      text.classList.add('visible');
+                    }
+              });
+        </script>
+  
+  
+  
+  <!-- إرسال الرسالة بدون تحديث الصفحة وعرض رسالة شكر عند نجاح الإرسال أو تنبيه عند الفشل -->
+      <script>
+            function showThankYou(event) {
+                    event.preventDefault(); // يمنع الإرسال العادي
+                    const form = document.getElementById('contactForm');
+                    const message = document.getElementById('thankYouMessage');
+                
+                    // ترسل النموذج يدويًا
+                    fetch(form.action, {
+                            method: 'POST',
+                            body: new FormData(form),
+                            headers: {
+                                      Accept: 'application/json',
+                                    },
+                    }).then(response => {
+                          if (response.ok) {
+                                  form.reset(); // يفرغ الحقول
+                                  message.style.display = 'block';
+                          } else {
+                                  alert('There was a problem. Please try again later.');
+                          }
+                    });
+            }   
+     </script>
+
   
 </body>
 </html>
