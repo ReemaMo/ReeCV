@@ -365,6 +365,27 @@ body.dark-mode .animated-color {
     -webkit-text-fill-color: transparent;
 }
 
+    body.dark-mode #skills {
+    background: rgba(0, 0, 0, 0.8); /* غامق شوي أكثر */
+}
+
+body.dark-mode .skill-bar {
+    background: rgba(255, 255, 255, 0.05); /* أخف وأغمق */
+}
+
+/* تعديل التدرج المتحرك في الوضع الليلي */
+body.dark-mode .progress {
+    background: linear-gradient(270deg, #0077a3, #005f80, #004f66); /* تدرج أزرق داكن وهادئ */
+    background-size: 400% 400%;
+    animation: gradientMove 2.5s ease infinite;
+}
+
+/* تعديل اللمعان في الوضع الليلي */
+body.dark-mode .progress.glow {
+    box-shadow: 0 0 15px rgba(0, 119, 163, 0.7); /* لون أزرق أقل سطوع */
+}
+
+
 
 
 
