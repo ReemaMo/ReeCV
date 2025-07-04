@@ -330,6 +330,59 @@
                      z-index: -1;
                     transition: background 0.5s ease;
                    }
+
+
+
+
+
+    
+
+    body.dark-mode {
+    color: #F8F9FA;
+    background-color: #121212; /* لو تفضل تغير خلفية الـ body نفسها مو بس ::before */
+}
+
+/* العناوين */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #F8F9FA;
+}
+
+
+/* نصوص ثانوية */
+body.dark-mode .secondary-text,
+body.dark-mode p,
+body.dark-mode span {
+    color: #CED4DA;
+}
+
+/* الشريط العلوي أو Navbar */
+body.dark-mode header {
+    color: #F8F9FA;
+}
+
+/* لون متدرج يشبه Bootstrap */
+body.dark-mode .animated-color {
+    background: linear-gradient(45deg, #6F42C1, #20C997);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+    
       
       body.dark-mode::before {
                             background: rgba(0, 0, 0, 0.6); /* تغطية شبه شفافة عند الوضع الليلي */
