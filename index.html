@@ -354,14 +354,26 @@ body.dark-mode h6 {
 body.dark-mode .project-card h3 {
   color: #c0c8d0 ; 
 }
+    body.dark-mode .project-details {
+    background: rgba(25, 32, 44, 0.6);
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 10;
+}
 
-body.dark-mode .project-details {
+
+/* body.dark-mode .project-details {
     background: rgba(25, 32, 44, 0.85);
     color: white !important;
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(26px);
-}
-
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+     transition: background-color 0.3s ease;
+} */
 
 /* نصوص ثانوية */
 body.dark-mode .secondary-text,
@@ -416,13 +428,6 @@ body.dark-mode .contact-form button:hover {
 }
 
 
-
-body.dark-card .project-box {
-    background-color: rgba(255, 255, 255, 0.05); /* رمادي داكن شفاف */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* حدود خفيفة */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4); /* ظل بسيط */
-    transition: background-color 0.3s ease;
-}
 
 body.dark-mode .project-card:hover {
     background-color: rgba(255, 255, 255, 0.08); /* إضاءة طفيفة عند التمرير */
