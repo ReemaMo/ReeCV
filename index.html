@@ -1309,9 +1309,25 @@
     <!-- 
         4.3     قسم الخبرات/المشاريع
 ----------------------------------------- -->
+
+  <script>
+  const expSection = document.getElementById('experience');
+
+  window.addEventListener('scroll', () => {
+    const rect = expSection.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight - 80 && rect.bottom > 0;
+
+    if (isVisible) {
+      expSection.classList.add('visible');
+    } else {
+      expSection.classList.remove('visible');
+    }
+  });
+</script>
+
   
       <!--  إظهار قسم الخبرات/المشاريع عند التمرير للأسفل    -->
-         <script>
+<!--          <script>
                 const expSection = document.getElementById('experience');
               
                 window.addEventListener('scroll', () => {
@@ -1320,7 +1336,7 @@
                           expSection.classList.add('visible');
                         }
                 });
-        </script>
+        </script> -->
 
 <!-- 
         5.3      قسم المهارات
