@@ -1364,18 +1364,29 @@
               window.addEventListener("scroll", function () {
                       const vision = document.getElementById("vision");
                       const title = document.querySelector(".vision-title");
+                const text = document.querySelector('.vision-text');
+                
                       const rect = vision.getBoundingClientRect();
-                  
+                  const sectionTop = text.getBoundingClientRect().top;
+                  const screenHeight = window.innerHeight;
+                     // تأثير على العنوان
                       if (rect.top >= 0 && rect.top <= window.innerHeight * 0.6) {
                           title.classList.add("flash");
                       } else {
                           title.classList.remove("flash");
-                 }
+                      }
+                
+    // إظهار النص عند التمرير
+    if (textTop < screenHeight - 100) {
+      text.classList.add("visible");
+    } else {
+      text.classList.remove("visible"); // اختياري لو أردت إعادة الإخفاء
+    }
               });
       </script>
   
    <!--  إظهار نص الرؤية عند التمرير لأسفل  -->
-      <script>
+<!--       <script>
               window.addEventListener('scroll', () => {
                     const text = document.querySelector('.vision-text');
                     const sectionTop = text.getBoundingClientRect().top;
@@ -1385,7 +1396,7 @@
                       text.classList.add('visible');
                     }
               });
-      </script>
+      </script> -->
   
   
 <!-- 
