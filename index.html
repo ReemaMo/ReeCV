@@ -77,8 +77,8 @@
      /* قوائم نقطية */
 /*     ul {
         list-style-type: disc;
-        padding-left: 40px; */
-       }
+        padding-left: 40px; 
+       }*/
     /* تنسيق التذييل */
     footer {
             text-align: center;
@@ -487,12 +487,17 @@
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-  opacity: 0;
-  transform: translateY(60px);
-  transition:  all 0.9s ease;
+                        opacity: 0;
+                        transform: translateY(60px);
+                        transition:  all 0.9s ease;
                       }
+      /*  اظهار القسم عند التمرير */
+      .about-section.visible {
+                              opacity: 1;
+                              transform: translateY(0);
+                             }
                       
-        .about-content h2 {
+       .about-content h2 {
                           font-size: 3.2em;
                           text-align: center;
                           color: #CCCCCC;  
@@ -519,28 +524,23 @@
                                 box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
                               }
 
-.about-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* 
    11.1    قسم المشاريع (Projects Section)
 ---------------------------------------------- */
 
           #experience {
-                    background: rgba(255, 255, 255, 0.06); 
-                    backdrop-filter: blur(20px);           
-                    -webkit-backdrop-filter: blur(20px);
-                    border-radius: 18px;
-                    box-shadow: 0 0 25px rgba(255, 255, 255, 0.07);
+                      background: rgba(255, 255, 255, 0.06); 
+                      backdrop-filter: blur(20px);           
+                      -webkit-backdrop-filter: blur(20px);
+                      border-radius: 18px;
+                      box-shadow: 0 0 25px rgba(255, 255, 255, 0.07);
                       max-width: 1000px;
                       margin: 100px auto;
                       padding: 120px 30px;
                       opacity: 0;
                       transform: translateY(40px);
                       transition: all 1s ease-in-out;
-                       }
+                      }
           
           #experience.visible {
                               opacity: 1;
@@ -555,13 +555,13 @@
                         margin-bottom: 70px; 
                         }
                       
-        
+        /* شبكة عرض البطاقات (المشاريع) */
         .projects-grid {
                       display: grid;
                       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                       gap: 30px;
                       }
-        
+        /*  بطاقة المشروع الأساسية (Project Card) */
         .project-card {
                       position: relative;
                       background: rgba(255, 255, 255, 0.02);
@@ -683,7 +683,7 @@
               border-radius: 25px;
               transition: width 2s ease-in-out;
              }
-    
+    /* تحريك تدرج الألوان أفقيًا */
     @keyframes gradientMove {
                             0% { background-position: 0% 50%; }
                             50% { background-position: 100% 50%; }
@@ -745,6 +745,7 @@
                        animation: white-flash 1s ease-out forwards;
                         }
     
+   /* وميض مؤقت لنص العنوان */
     @keyframes white-flash {
                     0% {
                     text-shadow: 0 0 0 white;
@@ -757,11 +758,7 @@
                          }
                              }
 
-
     .vision-text {    
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
                 font-size: 1.8em;    
                 color: #f2f2f2;
                 line-height: 1.9;
@@ -771,11 +768,7 @@
                 background: rgba(255, 255, 255, 0.04);
                }
     
-    /* Animation on scroll */
-    .vision-text.visible {
-                        opacity: 1;
-                        transform: translateY(0);
-                        }
+
     
 /* 
     14.1   قسم التواصل (Contact Section)   
@@ -982,7 +975,7 @@
                                   color: #f2f2f2;
                                   }  
                   
-                          /* ==== قسم المشاريع ==== */ 
+                  /* ==== قسم المشاريع ==== */ 
                 .projects-title {
                                 font-size: 1.8em;        
                                 text-align: center;       /* توسيط العنوان */
@@ -1027,11 +1020,10 @@
                 }
               
               
-                  
+               /* ==== تعديل التخطيط على الشاشات الصغيرة  ====*/
                 .left-block, .right-block {
                                           width: 100%;
-                                          }
-              
+                                          }  
                 .right-block {
                               margin-bottom: 20px;
                              }
@@ -1297,11 +1289,37 @@
       });
     
 </script>
+  
 
+<!-- 
+        2.3    التمرير السلس مع مراعاة ارتفاع شريط التنقل 
+--------------------------------------------------> 
 
+      <script>
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+              anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+            
+                // نحسب ارتفاع الشريط تلقائياً
+                const nav = document.querySelector('nav');
+                const offset = nav ? nav.offsetHeight + 15 : 80; 
+            
+                if (target) {
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.scrollY - offset;
+                  
+                        window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth"
+                  });
+                }
+              });
+            });
+    </script>
   
 <!-- 
-        2.3     قائمة التنقل للجوال
+        3.3     قائمة التنقل للجوال
 ----------------------------------------- --> 
        <!--  تبديل ظهور وإخفاء قائمة التنقل والخلفية الداكنة عند الضغط على زر القائمة -->
     <script>
@@ -1333,7 +1351,7 @@
       </script>
 
 <!-- 
-        3.3     الوضع الداكن\الفاتح
+        4.3     الوضع الداكن\الفاتح
 ----------------------------------------- --> 
       <!-- تبديل وضع الواجهة بين النهاري والليلي مع تغيير أيقونة الحالة -->
       <script>
@@ -1353,7 +1371,7 @@
 
 
 <!-- 
-        4.3      قسم المهارات
+        5.3      قسم المهارات
 ----------------------------------------- -->
     
   <!-- تحريك أشرطة المهارات عند ظهور قسم المهارات في الشاشة -->
@@ -1387,7 +1405,7 @@
   
   
 <!-- 
-        5.3     قسم التواصل
+        6.3     قسم التواصل
 ----------------------------------------- -->
   <!-- إرسال الرسالة بدون تحديث الصفحة وعرض رسالة شكر عند نجاح الإرسال أو تنبيه عند الفشل -->
       <script>
@@ -1414,29 +1432,6 @@
             }   
      </script>
 
-<!-- ----------------------------------------------------- -->
-  <script>
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-
-    // نحسب ارتفاع الشريط تلقائياً
-    const nav = document.querySelector('nav');
-    const offset = nav ? nav.offsetHeight + 10 : 80; // نضيف 10px احتياطية
-
-    if (target) {
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.scrollY - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  });
-});
-</script>
-  
+      
 </body>
 </html>
