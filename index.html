@@ -818,13 +818,24 @@
     .contact-form button:hover {
                                 background-color: #006f7a;
                                }
+
     
 /* 
     15.1   رسالة الشكر بعد ارسال الرسالة   
 ---------------------------------------------- */ 
     
+      .contact-wrapper {
+                       position: relative; /*  لجعل الرسالة تتموضع داخلها */
+                       }
+    
       .thank-you-message {
                           display: none;
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          right: 0;
+                          margin: 0 auto;
+                          z-index: 10;
                           margin-top: 30px;
                           font-size: 1.3em;
                           color: #00ffcc;
@@ -1211,7 +1222,9 @@
 
 
    <!--  قسم التواصل مع نموذج إرسال رسالة ورسالة شكر بعد الإرسال Contact Section -->
+  
     <section id="contact" class="contact-section">
+      <div class="contact-wrapper">
           <div class="container">
                 <h2>Contact Me</h2>
             
@@ -1234,6 +1247,7 @@
                          Thank you! Your message has been sent.
                       </div>
           </div>
+      </div>
     </section>
   
 <!-- 
