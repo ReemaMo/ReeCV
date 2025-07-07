@@ -833,8 +833,7 @@
                           position: absolute;
                           left: 50%;
                           transform: translateX(-50%);
-                          bottom: 0; 
-                          margin-bottom: -100%; 
+                          top: 20px;
                           font-size: 1.3em;
                           color: #00ffcc;
                           background: rgba(255, 255, 255, 0.05);
@@ -843,6 +842,7 @@
                           box-shadow: 0 0 20px rgba(0, 255, 204, 0.1);
                           text-align: center;
                           backdrop-filter: blur(10px);
+                          z-index: 10; 
                         }
   
       @keyframes fadeIn {
@@ -1222,30 +1222,32 @@
    <!--  قسم التواصل مع نموذج إرسال رسالة ورسالة شكر بعد الإرسال Contact Section -->
   
     <section id="contact" class="contact-section">
-      <div class="contact-wrapper" style="position: relative;">
+      
           <div class="container">
                 <h2>Contact Me</h2>
             
-                <form
-                      action="https://formspree.io/f/xyzjlkwn"
-                      method="POST"
-                      class="contact-form"
-                      id="contactForm"
-                      onsubmit="showThankYou(event)"
-                 >
-                  
-                      <input type="text" name="name" placeholder="Your Name" required />
-                      <input type="email" name="email" placeholder="Your Email" required />
-                      <textarea name="message" placeholder="Your Message" required></textarea>
-                      <button type="submit">Send Message</button>
-                </form>
-            
+              <div class="contact-wrapper" style="position: relative;">                            
+                
                       <!-- رسالة الشكر -->
                       <div id="thankYouMessage" class="thank-you-message">
                          Thank you! Your message has been sent.
-                      </div>
+                      </div>     
+                      <form
+                            action="https://formspree.io/f/xyzjlkwn"
+                            method="POST"
+                            class="contact-form"
+                            id="contactForm"
+                            onsubmit="showThankYou(event)"
+                       >
+                        
+                            <input type="text" name="name" placeholder="Your Name" required />
+                            <input type="email" name="email" placeholder="Your Email" required />
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message</button>
+                      </form>
+
           </div>
-      </div>
+       </div>
     </section>
   
 <!-- 
